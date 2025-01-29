@@ -38,7 +38,12 @@ const App = () => {
             onClick: () => alert("Navigating to Blog"),
         }
     ];    
+    // ------------------------------------------------
 
+    // Cards Data
+
+    // ------------------------------------------------
+    
     return (
         <>
             {/* Navigation Bar Usage */}
