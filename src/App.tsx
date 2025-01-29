@@ -1,16 +1,18 @@
 import { NavBar } from "./Components/NavigationBar/NavBar";
 
 const App = () => {
-    const buttonStyle = {
+
+    // Navigation Bar Data
+    const ButtonStyles = {
         // Optional Fields for customization
         // ButtonTextColor:"#FFFFFF",
         // NavBarBackground: "green"
     }
     const Logo = {
-        imagePath: "https://avatars.githubusercontent.com/u/65080565?v=4",
+        imagePath: "image/Khian_Icon_Logo.png",
         href: "https://khian.netlify.app/"
     }
-    const buttons = [
+    const ButtonList = [
         {
             label: "Home",
             onClick: () => alert("Navigating to Home"),
@@ -39,9 +41,10 @@ const App = () => {
 
     return (
         <>
+            {/* Navigation Bar Usage */}
             <NavBar 
-                Buttons={buttons} 
-                ButtonStyle={buttonStyle}
+                Buttons={ButtonList} 
+                ButtonStyle={ButtonStyles}
                 Logo={Logo}
             />
         </>
