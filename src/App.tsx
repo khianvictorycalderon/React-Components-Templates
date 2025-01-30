@@ -1,5 +1,6 @@
 import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Cards } from "./Components/Cards/Cards";
+import { Footer } from "./Components/Footer/Footer";
 
 const App = () => {
 
@@ -105,6 +106,64 @@ const App = () => {
         }
     ];    
     // ------------------------------------------------
+    
+    // Footer Data
+    const FooterStyle = {
+        // Optional: For customizing styles
+        // TextColor: "red",
+        // Background: "green"
+    }
+    const FooterSocialLinks = [
+        {
+            ImagePath: "image/github.png",
+            Href: "https://github.com/khianvictorycalderon",
+            Alt: "GitHub"
+        },
+        {
+            ImagePath: "image/upwork.png",
+            Href: "https://www.upwork.com/freelancers/~013a9c6d4543925f1e",
+            Alt: "Upwork"
+        },
+        {
+            ImagePath: "image/tiktok.png",
+            Href: "https://www.tiktok.com/@khian.vc",
+            Alt: "TikTok"
+        },
+    ];
+    const FooterMiscLinks = [
+        {
+            Text: "Blogs",
+            Href: "#"
+        },
+        {
+            Text: "Features",
+            Href: "#"
+        },
+        {
+            Text: "Articles",
+            Href: "#"
+        },
+        {
+            Text: "News",
+            Href: "#"
+        },
+        {
+            Text: "Tutorials",
+            Href: "#"
+        },
+        {
+            Text: "Privacy Policy",
+            Href: "#"
+        },
+        {
+            Text: "Terms and Conditions",
+            Href: "#"
+        },
+    ];
+    const MiscInfo = (<>
+        <p>All rights reserved 2025.</p>
+    </>);
+    // ------------------------------------------------
 
     return (
         <>
@@ -120,6 +179,23 @@ const App = () => {
                 // IsDarkTheme={true} // Optional if you want your cards to have dark theme
                 CardSectionBG="rgb(229, 229, 229)"
                 Cards={CardData}
+            />
+
+            {/* Footer should Always be Last*/}
+            <Footer 
+                Title="Website Created by Khian"
+                Description={<p>Want to help me? 
+                    <a 
+                        href="https://khianvictorycalderon.github.io/donation/donate.html"
+                        className="btn mx-2 btn-primary"
+                        >
+                        Donate to Khian
+                    </a>
+                </p>}
+                Links={FooterSocialLinks}
+                MiscLinks={FooterMiscLinks}
+                MiscInfo={MiscInfo}
+                Style={FooterStyle}
             />
         </>
     );
