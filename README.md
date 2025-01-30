@@ -15,40 +15,6 @@ A reusable `NavBar` component built with TypeScript and React for creating a cus
 - `Logo` *(optional)*: An object for displaying a logo in the navbar.
   - **`imagePath`**: The path to the logo image.
   - **`href`** *(optional)*: The URL to navigate to when the logo is clicked.
-
-### Example Usage
-
-```tsx
-import React from 'react';
-import { NavBar } from './NavBar';
-
-const handleButtonClick = () => {
-  alert('Button clicked!');
-};
-
-const App = () => {
-  return (
-    <div>
-      <NavBar
-        ButtonStyle={{
-          ButtonTextColor: 'white', // Optional: Custom text color for buttons
-          NavBarBackground: 'blue', // Optional: Custom navbar background color
-        }}
-        Buttons={[
-          { label: 'Home', onClick: handleButtonClick },
-          { label: 'About', onClick: handleButtonClick },
-          { label: 'Contact', onClick: handleButtonClick }
-        ]}
-        Logo={{
-          imagePath: '/path/to/logo.png', // Path to logo image
-          href: 'https://example.com', // Optional: Logo link
-        }}
-      />
-    </div>
-  );
-}
-
-export default App;
   
 ## Cards
 
@@ -64,36 +30,5 @@ A reusable `Cards` component built with TypeScript and React for displaying a li
     - **`Description`**: The description text for the card.
     - **`Onclick`**: A callback function triggered when the card is clicked.
 
-### Example Usage
 
-```tsx
-import React from 'react';
-import { Cards } from './Cards';
-
-const cardData = [
-  {
-    ImagePath: 'path/to/image.jpg', // Optional image path
-    Title: 'Card Title 1',
-    Description: 'Description of the card.',
-    Onclick: () => alert('Card 1 clicked'),
-  },
-  {
-    Title: 'Card Title 2',
-    Description: 'Description of the card.',
-    Onclick: () => alert('Card 2 clicked'),
-  },
-];
-
-const App = () => {
-  return (
-    <div>
-      <Cards
-        IsDarkTheme={true} // Optional, defaults to false
-        CardSectionBG="lightgray" // Optional, for setting custom background color
-        Cards={cardData} // Array of card data
-      />
-    </div>
-  );
-}
-
-export default App;
+# Example usage is in the SRC/App.tsx
