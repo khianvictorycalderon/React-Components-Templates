@@ -1,6 +1,7 @@
 import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Cards } from "./Components/Cards/Cards";
 import { Footer } from "./Components/Footer/Footer";
+import { Hero } from "./Components/HeroSection/Hero";
 
 const App = () => {
 
@@ -172,6 +173,17 @@ const App = () => {
                 Buttons={ButtonList} 
                 ButtonStyle={ButtonStyles}
                 Logo={Logo}
+            />
+
+            {/* Hero Section Usage */}
+            <Hero
+                Background="url('image/space.jpg')"
+                Title="Sample Website"
+                Description="Sample Description"
+                ButtonLabel="CTA Button"
+                ButtonOnClick={() => alert("You clicked the CTA")}
+                // HasDarkCover={false} // Optional for Background if it is solid color
+                // Logo="image/Khian_Icon_Logo.png"
             />
 
             {/* Cards Usage */}

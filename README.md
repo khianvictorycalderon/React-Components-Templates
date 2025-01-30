@@ -15,6 +15,20 @@ A reusable `NavBar` component built with TypeScript and React for creating a cus
 - `Logo` *(optional)*: An object for displaying a logo in the navbar.
   - **`imagePath`**: The path to the logo image.
   - **`href`** *(optional)*: The URL to navigate to when the logo is clicked.
+
+## Hero Section
+
+A reusable `Hero` component built with TypeScript and React for creating a customizable hero section with a background image or color, title, description, button, and an optional logo.
+
+### `HeroProps`
+
+- `Title`: The main heading text displayed in the hero section.
+- `Description`: A short description or tagline below the title.
+- `ButtonLabel`: The text displayed inside the call-to-action button.
+- `ButtonOnClick`: A function triggered when the button is clicked.
+- `Background` *(optional)*: A string representing either a background image URL or a CSS color value.
+- `Logo` *(optional)*: A URL string for an optional logo displayed in the hero section.
+- `HasDarkCover` *(optional, default: `true`)*: A boolean that determines whether a semi-transparent dark overlay appears over the background.
   
 ## Cards
 
