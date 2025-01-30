@@ -1,21 +1,54 @@
 # React Reusable Components
 
 ## Navigation Bar
-The `NavBar` component is a custom navigation bar that is mobile responsive and supports customization of button styles and logo. 
+
+A reusable `NavBar` component built with TypeScript and React for creating a customizable navigation bar with support for mobile responsiveness and dynamic buttons.
 
 ### `NavBarProps`
 
-- `ButtonStyle`: Customize the button and navbar styles
-    - **`ButtonTextColor`** *(optional)*: The text color for the buttons.
-    - **`NavBarBackground`** *(optional)*: The background color for the navigation bar.
+- `ButtonStyle`: An object for customizing the appearance of the buttons and navbar.
+  - **`ButtonTextColor`** *(optional)*: The color of the text on the buttons.
+  - **`NavBarBackground`** *(optional)*: The background color of the navbar.
+- `Buttons`: An array of objects representing the buttons in the navbar. Each object contains:
+  - **`label`**: The text displayed on the button.
+  - **`onClick`**: A callback function triggered when the button is clicked.
+- `Logo` *(optional)*: An object for displaying a logo in the navbar.
+  - **`imagePath`**: The path to the logo image.
+  - **`href`** *(optional)*: The URL to navigate to when the logo is clicked.
 
-- `Buttons`: A list of buttons to display in the navbar.
-    - **`label`**: The text to display inside the button.
-    - **`onClick`**: A callback function to be invoked when the button is clicked.
+### Example Usage
 
-- `Logo`: An optional logo displayed on the navbar.
-    - **`imagePath`**: The path to the logo image.
-    - **`href`** *(optional)*: If provided, wraps the logo in an anchor tag linking to the specified URL.
+```tsx
+import React from 'react';
+import { NavBar } from './NavBar';
+
+const handleButtonClick = () => {
+  alert('Button clicked!');
+};
+
+const App = () => {
+  return (
+    <div>
+      <NavBar
+        ButtonStyle={{
+          ButtonTextColor: 'white', // Optional: Custom text color for buttons
+          NavBarBackground: 'blue', // Optional: Custom navbar background color
+        }}
+        Buttons={[
+          { label: 'Home', onClick: handleButtonClick },
+          { label: 'About', onClick: handleButtonClick },
+          { label: 'Contact', onClick: handleButtonClick }
+        ]}
+        Logo={{
+          imagePath: '/path/to/logo.png', // Path to logo image
+          href: 'https://example.com', // Optional: Logo link
+        }}
+      />
+    </div>
+  );
+}
+
+export default App;
   
 ## Cards
 
