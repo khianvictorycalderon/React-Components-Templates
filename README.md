@@ -29,6 +29,25 @@ A reusable `Hero` component built with TypeScript and React for creating a custo
 - `Background` *(optional)*: A string representing either a background image URL or a CSS color value.
 - `Logo` *(optional)*: A URL string for an optional logo displayed in the hero section.
 - `HasDarkCover` *(optional, default: `true`)*: A boolean that determines whether a semi-transparent dark overlay appears over the background.
+
+## TwinList
+
+A reusable `TwinList` component built with TypeScript and React for displaying a structured, alternating list layout. It supports customizable styles, dynamic button actions, and images.
+
+### `TwinListProps`
+
+- **`Style`** *(optional)*: An object for customizing the appearance of the component.
+  - **`Background`** *(optional)*: The background color of the entire section.
+  - **`ListBackground`** *(optional)*: The background color of individual list items.
+  - **`TextColor`** *(optional)*: The color of the text inside the list items.
+  - **`ButtonStyle`** *(optional, default: `1`)*: Defines the button style, accepts values from `1` to `5`.
+
+- **`List`**: An array of objects representing the list items. Each object contains:
+  - **`Title`**: The title displayed for the list item.
+  - **`Description`**: A short description related to the item.
+  - **`Image`**: A URL string pointing to the image displayed beside the text.
+  - **`ButtonLabel`**: The text displayed on the button.
+  - **`ButtonOnClick`**: A callback function triggered when the button is clicked.
   
 ## Cards
 

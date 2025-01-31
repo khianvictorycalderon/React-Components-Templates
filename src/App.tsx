@@ -2,6 +2,7 @@ import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Cards } from "./Components/Cards/Cards";
 import { Footer } from "./Components/Footer/Footer";
 import { Hero } from "./Components/HeroSection/Hero";
+import { TwinList } from "./Components/TwinList/TwinList";
 
 const App = () => {
 
@@ -166,6 +167,39 @@ const App = () => {
     </>);
     // ------------------------------------------------
 
+    // Twin List Data
+    const TwinListData = [
+        {
+            Title: "Sample Title",
+            Description: "Sample Description",
+            Image: "image/sample_bg1.jpg",
+            ButtonLabel: "A Button",
+            ButtonOnClick: () => alert("You clicked the button")
+        },
+        {
+            Title: "Sample Title",
+            Description: "Sample Description",
+            Image: "image/sample_bg2.jpg",
+            ButtonLabel: "A Button",
+            ButtonOnClick: () => alert("You clicked the button")
+        },
+        {
+            Title: "Sample Title",
+            Description: "Sample Description",
+            Image: "image/space.jpg",
+            ButtonLabel: "A Button",
+            ButtonOnClick: () => alert("You clicked the button")
+        },
+    ];
+    const TwinListStyle={
+        Background:"rgb(0, 76, 83)",
+        ListBackground: "rgb(245, 245, 245)",
+        TextColor: "rgb(84, 83, 83)",
+        ButtonStyle: 1 // Default value is 1 if none was provided
+    }
+
+    // ------------------------------------------------
+
     return (
         <>
             {/* Navigation Bar Usage */}
@@ -186,10 +220,16 @@ const App = () => {
                 // Logo="image/Khian_Icon_Logo.png"
             />
 
+            {/* Twin List Usage */}
+            <TwinList
+                List={TwinListData}
+                Style={TwinListStyle}
+            />
+
             {/* Cards Usage */}
             <Cards 
-                // IsDarkTheme={true} // Optional if you want your cards to have dark theme
-                CardSectionBG="rgb(229, 229, 229)"
+                IsDarkTheme={true} // Optional if you want your cards to have dark theme
+                CardSectionBG="rgb(59, 59, 59)"
                 Cards={CardData}
             />
 
