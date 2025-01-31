@@ -2,19 +2,19 @@
 
 ## Navigation Bar
 
-A reusable `NavBar` component built with TypeScript and React for creating a customizable navigation bar with support for mobile responsiveness and dynamic buttons.
+A reusable `NavBar` component built with TypeScript and React for creating a responsive navigation bar with buttons, logo, and optional customization of styles.
 
 ### `NavBarProps`
 
-- `ButtonStyle`: An object for customizing the appearance of the buttons and navbar.
-  - **`ButtonTextColor`** *(optional)*: The color of the text on the buttons.
-  - **`NavBarBackground`** *(optional)*: The background color of the navbar.
-- `Buttons`: An array of objects representing the buttons in the navbar. Each object contains:
-  - **`label`**: The text displayed on the button.
-  - **`onClick`**: A callback function triggered when the button is clicked.
-- `Logo` *(optional)*: An object for displaying a logo in the navbar.
-  - **`imagePath`**: The path to the logo image.
-  - **`href`** *(optional)*: The URL to navigate to when the logo is clicked.
+- `Buttons`: An array of objects representing the buttons in the navbar. Each object must have:
+  - `label`: The text displayed on the button.
+  - `onClick`: A function triggered when the button is clicked.
+- `Style` *(optional)*: An object containing optional custom styles:
+  - `ButtonTextColor`: A string representing the color of the button text.
+  - `NavBarBackground`: A string representing the background color of the navbar.
+- `Logo` *(optional)*: An object representing the logo in the navbar:
+  - `imagePath`: A string representing the image URL for the logo.
+  - `href` *(optional)*: A string representing the URL that the logo links to.
 
 ## Hero Section
 

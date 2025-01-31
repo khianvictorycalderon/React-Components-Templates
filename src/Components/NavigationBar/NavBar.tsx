@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import style from "./NavBar.module.css"
 
 interface NavBarProps {
-    ButtonStyle: {
+    Style?: {
         ButtonTextColor?: string;
         NavBarBackground?: string;
     };
@@ -16,7 +16,7 @@ interface NavBarProps {
     };
 }
 
-export const NavBar = ({ Buttons, ButtonStyle, Logo }: NavBarProps) => {
+export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
     
     // Check if it is mobile for mobile responsiveness of the hamburger icon
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -40,9 +40,9 @@ export const NavBar = ({ Buttons, ButtonStyle, Logo }: NavBarProps) => {
         <>
             <div onClick={() => setIsMobileMenuShown(true)} id={style.hamburger}/>
             {(!isMobile || isMobileMenuShown) && (
-                <nav className={style.navbar} style={{
-                    background: ButtonStyle.NavBarBackground
-                }}>
+                <nav className={style.navbar} style={
+                    Style?.NavBarBackground ? {background: Style.NavBarBackground} : undefined
+                }>
                     {Logo && Logo?.href ? (
                         <a href={Logo.href}>
                             <img className={style.logo} src={Logo.imagePath} />
@@ -66,9 +66,9 @@ export const NavBar = ({ Buttons, ButtonStyle, Logo }: NavBarProps) => {
                                 className={style.button}
                                 key={item.label}
                                 onClick={item.onClick}
-                                style = {{
-                                    color: ButtonStyle.ButtonTextColor
-                                }}
+                                style = {
+                                    Style?.ButtonTextColor ? {color: Style.ButtonTextColor} : undefined
+                                }
                             >
                                 {item.label}
                             </button>
