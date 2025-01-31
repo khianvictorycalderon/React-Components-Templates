@@ -63,6 +63,18 @@ A reusable `Cards` component built with TypeScript and React for displaying a li
     - **`Description`**: The description text for the card.
     - **`Onclick`**: A callback function triggered when the card is clicked.
 
+## PhotoGrid
+
+A reusable `PhotoGrid` component built with TypeScript and React for displaying a grid of images with optional background styling and click handlers.
+
+### `PhotoGridProps`
+
+- **`Background`** *(optional)*: A string defining the background color or image of the grid.
+- **`Images`**: An array of objects representing the images in the grid. Each object contains:
+  - **`Image`**: A URL string pointing to the image source.
+  - **`Alt`**: The alternative text for the image.
+  - **`Onclick`**: A callback function triggered when the image is clicked.
+
 ## Footer
 
 A reusable `Footer` component built with TypeScript and React for creating a customizable footer with support for styling, social media links, and additional information.

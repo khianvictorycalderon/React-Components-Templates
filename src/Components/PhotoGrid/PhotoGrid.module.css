@@ -1,0 +1,37 @@
+.photo_grid {
+    padding: 2rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo_container {
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.photo {
+    object-fit: contain;
+    cursor: pointer;
+    width: 5vw;
+    height: auto;
+    transition: 0.3s;
+}
+
+.photo:hover {
+    scale: 1.2;
+    filter: brightness(120%);
+}
+
+@media (max-width: 768px) {
+    .photo_grid {
+        gap: 2.5rem;
+    }
+    .photo {
+        width: 18vw;
+    }
+}

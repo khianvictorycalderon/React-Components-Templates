@@ -3,6 +3,7 @@ import { Cards } from "./Components/Cards/Cards";
 import { Footer } from "./Components/Footer/Footer";
 import { Hero } from "./Components/HeroSection/Hero";
 import { TwinList } from "./Components/TwinList/TwinList";
+import { PhotoGrid } from "./Components/PhotoGrid/PhotoGrid";
 
 const App = () => {
 
@@ -200,6 +201,32 @@ const App = () => {
 
     // ------------------------------------------------
 
+    // Photo Grid Data
+    const PhotoGridImages = [
+        {
+            Image: "image/github.png",
+            Alt: "GitHub Logo",
+            Onclick: () => alert("Clicked")
+        },
+        {
+            Image: "image/tiktok.png",
+            Alt: "Tiktok Logo",
+            Onclick: () => alert("Clicked")
+        },
+        {
+            Image: "image/mysql.png",
+            Alt: "MySQL Logo",
+            Onclick: () => alert("Clicked")
+        },
+        {
+            Image: "image/php.png",
+            Alt: "PHP Logo",
+            Onclick: () => alert("Clicked")
+        },
+    ]
+
+    // ------------------------------------------------
+
     return (
         <>
             {/* Navigation Bar Usage */}
@@ -231,6 +258,12 @@ const App = () => {
                 IsDarkTheme={true} // Optional if you want your cards to have dark theme
                 CardSectionBG="rgb(59, 59, 59)"
                 Cards={CardData}
+            />
+
+            {/* PhotoGrid Usage */}
+            <PhotoGrid
+                Background="rgb(33, 33, 33)"
+                Images={PhotoGridImages}
             />
 
             {/* Footer should Always be Last*/}
