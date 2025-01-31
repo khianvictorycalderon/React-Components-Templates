@@ -12,7 +12,7 @@ interface HeroProps {
 
 export const Hero = ({HasDarkCover=true, Background, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
     return (
-        <section 
+        <header 
             style={Background ? {backgroundImage: Background} : undefined}
             className={style.hero}
             >
@@ -46,6 +46,6 @@ export const Hero = ({HasDarkCover=true, Background, Title, Description, ButtonL
                     )}
                 </div>
             </div>
-        </section>
+        </header>
     )
 }
