@@ -233,7 +233,7 @@ const App = () => {
             {/* Navigation Bar Usage */}
             <NavBar 
                 Buttons={ButtonList} 
-                ButtonStyle={ButtonStyles}
+                Style={ButtonStyles}
                 Logo={Logo}
             />
 
@@ -291,7 +291,11 @@ const App = () => {
 
             {/* Footer should Always be Last*/}
             <Footer 
-                Title="Website Created by Khian"
+                Title={
+                    <h4>
+                        Website Created by <a href="">Khian</a>
+                    </h4>
+                }
                 Description={<p>Want to help me? 
                     <a 
                         href="https://khianvictorycalderon.github.io/donation/donate.html"
@@ -300,6 +304,7 @@ const App = () => {
                         Donate to Khian
                     </a>
                 </p>}
+                Logo="image/Khian_Icon_Logo.png"
                 Links={FooterSocialLinks}
                 MiscLinks={FooterMiscLinks}
                 MiscInfo={MiscInfo}

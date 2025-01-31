@@ -1,7 +1,7 @@
 import style from './Footer.module.css'
 
 interface FooterProps {
-    Title: string;
+    Title: React.ReactNode;
     Description: React.ReactNode;
     Logo: string;
     Style?: {
@@ -32,7 +32,7 @@ export const Footer = ({Title, Logo, Description, Links, MiscLinks, MiscInfo, St
             <div className={style.flex}>
                 <img src={Logo} className={style.footer_logo}/>
                 <div className={style.main_text}>
-                    <h4>{Title}</h4>
+                    {Title}
                     {Description}
                 </div>
             </div>
