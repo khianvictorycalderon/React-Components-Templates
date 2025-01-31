@@ -43,7 +43,7 @@ export const TwinList = ({
                         <img src={item.Image} className={style.side_image} />
                     </div>
                     <div className={style.content}>
-                        <h2>{item.Title}</h2>
+                        <h1>{item.Title}</h1>
                         <p>{item.Description}</p>
                         <button
                             className={`${style.button} ${style[`button_style_${ButtonStyle}`]}`} // Uses default if none is provided
