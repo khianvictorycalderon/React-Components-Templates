@@ -45,12 +45,12 @@
 
 .misc {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding-top: 2rem;
     padding-bottom: 2rem;
     gap: 2rem;
     font-size: 14pt;
-    width:60%;
+    width:80%;
     margin: auto;
     justify-items: center;
     text-align: center;
