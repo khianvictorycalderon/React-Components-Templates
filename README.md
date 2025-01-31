@@ -87,22 +87,23 @@ A reusable `Banner` component built with TypeScript and React, designed to displ
 
 ## Footer
 
-A reusable `Footer` component built with TypeScript and React for creating a customizable footer with support for styling, social media links, and additional information.
+A reusable `Footer` component built with TypeScript and React for creating a customizable footer with a title, description, logo, optional social media links, additional links, and custom styling.
 
 ### `FooterProps`
 
-- `Title`: The title text displayed in the footer.
-- `Description`: Any React node (such as text or elements) to describe the footer.
-- `Style` *(optional)*: An object for customizing the appearance of the footer.
-  - **`TextColor`** *(optional)*: The color of the text in the footer.
-  - **`Background`** *(optional)*: The background color of the footer.
-- `Links` *(optional)*: An array of objects representing social media or external links. Each object can contain:
-  - **`ImagePath`**: The path to the image for the link (icon or logo).
-  - **`Href`**: The URL the link should point to.
-  - **`Alt`**: The alt text for the image.
-- `MiscLinks` *(optional)*: An array of miscellaneous links such as privacy policy or terms of service. Each object can contain:
-  - **`Text`**: The text displayed for the link.
-  - **`Href`**: The URL the link should point to.
-- `MiscInfo` *(optional)*: Any extra information to display in the footer, such as copyright or contact information.
+- `Title`: A string representing the title of the footer.
+- `Description`: A React node that can contain any valid JSX content for the footer description.
+- `Logo`: A string representing the URL of the footer logo image.
+- `Style` *(optional)*: An object containing optional custom styles:
+  - `TextColor`: A string representing the color of the text.
+  - `Background`: A string representing the background color of the footer.
+- `Links` *(optional)*: An array of objects representing social media links. Each object must have:
+  - `ImagePath`: A string representing the URL of the social media image.
+  - `Href`: A string representing the URL of the social media link.
+  - `Alt`: A string representing the alt text for the image.
+- `MiscLinks` *(optional)*: An array of objects representing miscellaneous links. Each object must have:
+  - `Text`: A string representing the text of the link.
+  - `Href`: A string representing the URL of the link.
+- `MiscInfo` *(optional)*: A React node that can contain additional miscellaneous information in the footer.
 
 # Example usage is in the SRC/App.tsx
