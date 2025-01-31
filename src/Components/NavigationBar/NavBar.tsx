@@ -65,7 +65,10 @@ export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
                             <button
                                 className={style.button}
                                 key={item.label}
-                                onClick={item.onClick}
+                                onClick={() => {
+                                    item.onClick();
+                                    setIsMobileMenuShown(false)
+                                }}
                                 style = {
                                     Style?.ButtonTextColor ? {color: Style.ButtonTextColor} : undefined
                                 }
