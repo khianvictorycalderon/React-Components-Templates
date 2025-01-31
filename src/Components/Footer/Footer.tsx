@@ -45,6 +45,7 @@ export const Footer = ({Title, Logo, Description, Links, MiscLinks, MiscInfo, St
                     </div>
                 ))}
             </div>
+			<br/>
             {MiscLinks && (
                 <>
                     <hr className={style.hr}/>
