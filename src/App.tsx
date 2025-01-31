@@ -4,6 +4,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { Hero } from "./Components/HeroSection/Hero";
 import { TwinList } from "./Components/TwinList/TwinList";
 import { PhotoGrid } from "./Components/PhotoGrid/PhotoGrid";
+import { Banner } from "./Components/Banner/Banner";
 
 const App = () => {
 
@@ -264,6 +265,28 @@ const App = () => {
             <PhotoGrid
                 Background="rgb(33, 33, 33)"
                 Images={PhotoGridImages}
+            />
+
+            {/* Banner Usage (Multiple Banner for Multiple Images) */}
+            <Banner
+                Title="Sample Title"
+                Description={
+                    <>
+                        <p>This is a Description</p>
+                        <button className="btn btn-primary">Click Me</button>
+                    </>
+                }
+                BackgroundImage="image/space.jpg"
+            />
+            <Banner
+                Title="Sample Title"
+                Description={
+                    <>
+                        <p>This is a Description</p>
+                        <button className="btn btn-primary">Click Me</button>
+                    </>
+                }
+                BackgroundImage="image/sample_bg1.jpg"
             />
 
             {/* Footer should Always be Last*/}

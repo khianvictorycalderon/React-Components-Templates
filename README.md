@@ -75,6 +75,16 @@ A reusable `PhotoGrid` component built with TypeScript and React for displaying 
   - **`Alt`**: The alternative text for the image.
   - **`Onclick`**: A callback function triggered when the image is clicked.
 
+## Banner
+
+A reusable `Banner` component built with TypeScript and React, designed to display a customizable banner with an image background, title, and description.
+
+### `BannerProps`
+
+- **`BackgroundImage`**: A string representing the URL of the background image for the banner.
+- **`Title`**: A string representing the title text that will be displayed on the banner.
+- **`Description`**: A `React.ReactNode` representing the description content that will be displayed beneath the title. This can be text, JSX elements, or other React components.
+
 ## Footer
 
 A reusable `Footer` component built with TypeScript and React for creating a customizable footer with support for styling, social media links, and additional information.
