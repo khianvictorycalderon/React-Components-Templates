@@ -7,10 +7,11 @@ interface HeroProps {
     ButtonLabel: string;
     ButtonOnClick: () => void;
     Logo: string;
+    RoundedLogo?: boolean
     HasDarkCover?: boolean;
 }
 
-export const Hero = ({HasDarkCover=true, Background, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
+export const Hero = ({RoundedLogo=false, HasDarkCover=true, Background, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
     return (
         <header 
             style={Background ? {backgroundImage: Background} : undefined}
@@ -23,6 +24,9 @@ export const Hero = ({HasDarkCover=true, Background, Title, Description, ButtonL
                     <img
                         src={Logo}
                         className={style.logo}
+                        style={RoundedLogo ? {
+                            borderRadius: "50%"
+                        } : undefined}
                     />
                 </div>
                 <div className={style.content_box}>

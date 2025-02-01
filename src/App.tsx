@@ -245,6 +245,7 @@ const App = () => {
                 ButtonLabel="CTA Button"
                 ButtonOnClick={() => alert("You clicked the CTA")}
                 Logo="image/Khian_Icon_Logo.png"
+                // RoundedLogo={true} // Optional for rounded logo, by default it is false
                 // HasDarkCover={false} // Optional for Background if it is solid color
             />
 

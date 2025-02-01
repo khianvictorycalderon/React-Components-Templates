@@ -28,6 +28,7 @@ A reusable `Hero` component built with TypeScript and React for creating a custo
 - `ButtonOnClick`: A function triggered when the button is clicked.
 - `Background` *(optional)*: A string representing either a background image URL or a CSS color value.
 - `Logo`: A URL string for an optional logo displayed in the hero section.
+- `RoundedLogo` *(optional, default: `false`)*:  A boolean that determines if the logo is rounded or not
 - `HasDarkCover` *(optional, default: `true`)*: A boolean that determines whether a semi-transparent dark overlay appears over the background.
 
 ## TwinList
