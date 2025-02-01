@@ -3,7 +3,8 @@
     flex-wrap: wrap; /* Responsive wrapping */
     justify-content: center; /* Center align the cards */
     gap: 1.5rem;
-    padding: 2rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     background: none;
 }
 
