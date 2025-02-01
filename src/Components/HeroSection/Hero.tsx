@@ -6,7 +6,7 @@ interface HeroProps {
     Description: string;
     ButtonLabel: string;
     ButtonOnClick: () => void;
-    Logo?: string;
+    Logo: string;
     HasDarkCover?: boolean;
 }
 
@@ -19,31 +19,21 @@ export const Hero = ({HasDarkCover=true, Background, Title, Description, ButtonL
             <div 
                 style={HasDarkCover ? {background: "rgba(0, 0, 0, 0.535)"} : undefined}
                 className={style.content}>
-                <div className={style.box}>
-                    <div
-                        className={style.mobile_center}
+                <div className={`${style.logo_container} ${style.content_box}`}>
+                    <img
+                        src={Logo}
+                        className={style.logo}
+                    />
+                </div>
+                <div className={style.content_box}>
+                    <h1>{Title}</h1>
+                    <p>{Description}</p>
+                    <button 
+                        onClick={ButtonOnClick}
+                        className={style.button}
                         >
-                        <h1>{Title}</h1>
-                        <p>{Description}</p>
-                        <button
-                            onClick={ButtonOnClick}
-                            className={style.button}
-                            >
-                            {ButtonLabel}
-                        </button>
-                    </div>
-                    {Logo && (
-                        <div
-                            style={{
-                                textAlign: "center"
-                            }}
-                            >
-                            <img
-                                className={style.logo}
-                                src={Logo} 
-                                />
-                        </div>
-                    )}
+                        {ButtonLabel}
+                    </button>
                 </div>
             </div>
         </header>

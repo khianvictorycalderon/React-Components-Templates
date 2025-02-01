@@ -244,8 +244,8 @@ const App = () => {
                 Description="Sample Description"
                 ButtonLabel="CTA Button"
                 ButtonOnClick={() => alert("You clicked the CTA")}
+                Logo="image/Khian_Icon_Logo.png"
                 // HasDarkCover={false} // Optional for Background if it is solid color
-                // Logo="image/Khian_Icon_Logo.png"
             />
 
             {/* Twin List Usage */}
