@@ -1,6 +1,8 @@
-.twin_list {
+.twin_list_section {
     display: flex;
     flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .single_list {

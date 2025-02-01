@@ -27,7 +27,7 @@ export const TwinList = ({
     }: TwinListProps) => {
     return (
         <section 
-            className={style.twin_list}
+            className={style.twin_list_section}
             style={Background ? { background: Background } : undefined}
         >
             {List.map((item, index) => (
