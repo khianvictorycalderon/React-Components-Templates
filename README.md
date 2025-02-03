@@ -50,19 +50,22 @@ A reusable `TwinList` component built with TypeScript and React for displaying a
   - **`ButtonLabel`**: The text displayed on the button.
   - **`ButtonOnClick`**: A callback function triggered when the button is clicked.
   
-## Cards
+## Cards Component
 
-A reusable `Cards` component built with TypeScript and React for displaying a list of cards with optional customizations.
+A reusable `Cards` component built with TypeScript and React for displaying a customizable set of cards with images, titles, descriptions, and click functionality.
 
 ### `CardProps`
 
-- `IsDarkTheme` *(optional)*: A boolean to set the theme to dark. Defaults to `false`.
-- `CardSectionBG` *(optional)*: A custom background color for the card section.
-- `Cards`: An array of objects representing each card. Each object can have:
-    - **`ImagePath`** *(optional)*: The path to an image for the card.
-    - **`Title`**: The title text for the card.
-    - **`Description`**: The description text for the card.
-    - **`Onclick`**: A callback function triggered when the card is clicked.
+- `Cards`: An array of card objects, each containing:
+  - `ImagePath` *(optional)*: A string URL for an optional background image on the card.
+  - `Title`: The main heading text displayed on the card.
+  - `Description`: A short description displayed below the title.
+  - `Onclick`: A function triggered when the card is clicked.
+
+- `Style` *(optional)*: An object containing customizable styling options:
+  - `SectionBackground`: A string representing either a background image URL or a CSS color value for the entire card section.
+  - `CardsBackground`: A string representing the background color of individual cards.
+  - `CardsTextColor`: A string representing the text color used in the cards.
 
 ## PhotoGrid
 
