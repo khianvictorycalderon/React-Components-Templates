@@ -5,6 +5,7 @@ import { Hero } from "./Components/HeroSection/Hero";
 import { TwinList } from "./Components/TwinList/TwinList";
 import { PhotoGrid } from "./Components/PhotoGrid/PhotoGrid";
 import { Banner } from "./Components/Banner/Banner";
+import { SideBar } from "./Components/SideBar/SideBar";
 
 const App = () => {
 
@@ -229,7 +230,16 @@ const App = () => {
     // ------------------------------------------------
 
     return (
-        <>
+        <SideBar
+            Logo="image/Khian_Icon_Logo.png"
+            Title="Sample Title "
+            Style={{
+                Background: "rgb(21, 21, 21)", // Optional, if you want to customize the background
+                Textcolor: "rgb(236, 236, 236)"
+            }}
+            >
+            {/* SideBar Usage (Must be at the top) */}
+            
             {/* Navigation Bar Usage */}
             <NavBar 
                 Buttons={ButtonList} 
@@ -257,9 +267,12 @@ const App = () => {
 
             {/* Cards Usage */}
             <Cards 
-                IsDarkTheme={true} // Optional if you want your cards to have dark theme
-                CardSectionBG="rgb(59, 59, 59)"
                 Cards={CardData}
+                Style={{
+                    SectionBackground: "rgb(59, 59, 59)",
+                    CardsBackground: "rgb(37, 37, 37)",
+                    CardsTextColor: "rgb(255, 255, 255)",
+                }}
             />
 
             {/* PhotoGrid Usage */}
@@ -311,7 +324,7 @@ const App = () => {
                 MiscInfo={MiscInfo}
                 Style={FooterStyle}
             />
-        </>
+        </SideBar>
     );
 };
 

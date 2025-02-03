@@ -1,22 +1,27 @@
 import style from './Cards.module.css'
 
 interface CardProps {
-    IsDarkTheme?: boolean;
-    CardSectionBG?: string;
     Cards: {
         ImagePath?: string;
         Title: string;
         Description: string;
         Onclick: () => void;
     }[];
+    Style?:{
+        SectionBackground?: string;
+        CardsBackground?: string;
+        CardsTextColor?: string;
+    }
 }
 
-export const Cards = ({IsDarkTheme, Cards, CardSectionBG}: CardProps) => {
+export const Cards = ({Cards, Style}: CardProps) => {
     return (
         <>
             <div 
                 className={style.cardsection}
-                style={CardSectionBG ? {backgroundColor: CardSectionBG} : undefined}
+                style={{
+                    ...(Style?.SectionBackground ? {background: Style.SectionBackground} : undefined),
+                }}
                 >
                 {Cards.map((item, index) => (
                     <div 
@@ -24,14 +29,8 @@ export const Cards = ({IsDarkTheme, Cards, CardSectionBG}: CardProps) => {
                         key={item.Title + index}
                         onClick={item.Onclick}
                         style={{
-                            ...(item.ImagePath ? {} : { justifyContent: "center" }),
-                            ...(IsDarkTheme ? { 
-                                    background: "rgba(33, 33, 33, 0.91)" ,
-                                    color: "rgba(255, 255, 255, 0.95)",
-                                } : { 
-                                    background: "rgba(247, 247, 247, 0.97)",
-                                    color: "rgba(46, 46, 46, 0.93)",
-                                })
+                            ...(Style?.CardsBackground ? {background: Style.CardsBackground} : undefined),
+                            ...(Style?.CardsTextColor ? {color: Style.CardsTextColor} : undefined),
                         }}
                         >
                         {item.ImagePath && (
