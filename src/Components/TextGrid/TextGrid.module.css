@@ -1,0 +1,40 @@
+.text_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 4rem;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1.5rem;
+    background: rgb(46, 46, 46);
+    text-align: center;
+}
+
+.label {
+    background: rgb(178, 178, 178);
+    color: black;
+    text-align: center;
+    padding: 1.5% 3%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.label:hover {
+    background: rgba(255, 255, 255, 0.11) !important;
+}
+
+@media (max-width: 768px) {
+    .text_grid {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
+    }
+    .label {
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+}

@@ -6,6 +6,7 @@ import { TwinList } from "./Components/TwinList/TwinList";
 import { PhotoGrid } from "./Components/PhotoGrid/PhotoGrid";
 import { Banner } from "./Components/Banner/Banner";
 import { SideBar } from "./Components/SideBar/SideBar";
+import { TextGrid } from "./Components/TextGrid/TextGrid";
 
 const App = () => {
 
@@ -310,6 +311,40 @@ const App = () => {
     ]
 
     // ------------------------------------------------
+    
+    // TextGrid Data
+    const TextGridData = [
+        {
+            Label: "Front-End Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "Next-JS Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "PHP Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "MySQL Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "Back-End Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "Front-End Designer",
+            OnClick: () => alert("You've clicked me")
+        },
+        {
+            Label: "Firebase Developer",
+            OnClick: () => alert("You've clicked me")
+        },
+    ]
+    
+    // ------------------------------------------------
 
     return (
         <SideBar
@@ -373,6 +408,17 @@ const App = () => {
             <PhotoGrid
                 Background="rgb(33, 33, 33)"
                 Images={PhotoGridImages}
+            />
+
+            {/* TextGrid Usage */}
+            <TextGrid
+                Text={TextGridData}
+                Style={{
+                    Background: "rgb(45, 45, 45)",
+                    TextBackground: "rgb(30, 30, 30)",
+                    TextColor: "rgb(255, 255, 255)",
+                    TextBorderColor: "rgb(243, 243, 243)"
+                }}
             />
 
             {/* Banner Usage (Multiple Banner for Multiple Images) */}
