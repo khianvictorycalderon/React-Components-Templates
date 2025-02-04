@@ -10,65 +10,31 @@ A reusable `NavBar` component built with TypeScript and React for creating a res
   - `label`: The text displayed on the button.
   - `onClick`: A function triggered when the button is clicked.
 - `Style` *(optional)*: An object containing optional custom styles:
-  - `ButtonTextColor`: A string representing the color of the button text.
-  - `NavBarBackground`: A string representing the background color of the navbar.
-- `Logo` *(optional)*: An object representing the logo in the navbar:
-  - `imagePath`: A string representing the image URL for the logo.
-  - `href` *(optional)*: A string representing the URL that the logo links to.
+  - `ButtonTextColor`: A string# TwinList Component
 
-## SideBar
+A reusable `TwinList` component built with TypeScript and React for displaying a list of items, each containing a title, description, image, and button. This component is highly customizable via props to control its appearance and behavior.
 
-A reusable `SideBar` component built with TypeScript and React. It provides a collapsible sidebar with customizable styles, dynamic button actions, and a footer section.
+## `TwinListProps`
 
-### `SideBarProps`
+### `Style` *(optional)*
 
-- **`children`**: The content that will be displayed alongside the sidebar.
-- **`Logo`**: A string containing the URL of the sidebar logo.
-- **`Title`**: A string representing the sidebar title.
-- **`Style`** *(optional)*: An object for customizing the appearance of the sidebar.
-  - **`Background`** *(optional)*: The background color of the sidebar.
-  - **`Textcolor`** *(optional)*: The color of the text inside the sidebar.
+An optional object to customize the styles of the component. The following keys are available:
 
-- **`Buttons`**: An array of objects representing the buttons inside the sidebar. Each object contains:
-  - **`Logo`** *(optional)*: A URL string pointing to the button's icon.
-  - **`Label`**: The text displayed on the button.
-  - **`OnClick`**: A callback function triggered when the button is clicked.
+- `Background`: A string representing the background color of the entire section.
+- `ListBackground`: A string representing the background color of each individual list item.
+- `TextColor`: A string representing the text color of the list items.
+- `ButtonBackground`: A string representing the background color of the buttons.
+- `ButtonTextColor`: A string representing the text color of the buttons.
 
-- **`Footer`** *(optional)*: A React node for displaying custom footer content inside the sidebar.
+### `List`
 
-## Hero Section
+An array of objects representing the list items. Each object must contain:
 
-A reusable `Hero` component built with TypeScript and React for creating a customizable hero section with a background image or color, title, description, button, and an optional logo.
-
-### `HeroProps`
-
-- `Title`: The main heading text displayed in the hero section.
-- `Description`: A short description or tagline below the title.
-- `ButtonLabel`: The text displayed inside the call-to-action button.
-- `ButtonOnClick`: A function triggered when the button is clicked.
-- `Background` *(optional)*: A string representing either a background image URL or a CSS color value.
-- `Logo`: A URL string for an optional logo displayed in the hero section.
-- `RoundedLogo` *(optional, default: `false`)*:  A boolean that determines if the logo is rounded or not
-- `HasDarkCover` *(optional, default: `true`)*: A boolean that determines whether a semi-transparent dark overlay appears over the background.
-
-## TwinList
-
-A reusable `TwinList` component built with TypeScript and React for displaying a structured, alternating list layout. It supports customizable styles, dynamic button actions, and images.
-
-### `TwinListProps`
-
-- **`Style`** *(optional)*: An object for customizing the appearance of the component.
-  - **`Background`** *(optional)*: The background color of the entire section.
-  - **`ListBackground`** *(optional)*: The background color of individual list items.
-  - **`TextColor`** *(optional)*: The color of the text inside the list items.
-  - **`ButtonStyle`** *(optional, default: `1`)*: Defines the button style, accepts values from `1` to `5`.
-
-- **`List`**: An array of objects representing the list items. Each object contains:
-  - **`Title`**: The title displayed for the list item.
-  - **`Description`**: A short description related to the item.
-  - **`Image`**: A URL string pointing to the image displayed beside the text.
-  - **`ButtonLabel`**: The text displayed on the button.
-  - **`ButtonOnClick`**: A callback function triggered when the button is clicked.
+- `Title`: A string representing the title of the list item.
+- `Description`: A string representing the description of the list item.
+- `Image`: A string representing the URL of the image to be displayed.
+- `ButtonLabel`: A string representing the label of the button.
+- `ButtonOnClick`: A function to be triggered when the button is clicked.
   
 ## Cards Component
 

@@ -197,8 +197,9 @@ const App = () => {
     const TwinListStyle={
         Background:"rgb(0, 76, 83)",
         ListBackground: "rgb(245, 245, 245)",
-        TextColor: "rgb(84, 83, 83)",
-        ButtonStyle: 1 // Default value is 1 if none was provided
+        TextColor: "rgb(46, 46, 46)",
+        ButtonBackground: "rgb(104, 30, 160)",
+        ButtonTextColor: "rgb(255, 248, 248)",
     }
 
     // ------------------------------------------------

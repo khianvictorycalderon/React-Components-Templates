@@ -28,32 +28,9 @@
     display: block; /* Removes extra spacing issues */
 }
 
-.button_style_1 {
-    color: white;
-    background: #1A91E1; /* Vibrant Blue */
-}
-
-.button_style_2 {
-    color: white;
-    background: #6F42C1; /* Modern Purple */
-}
-
-.button_style_3 {
-    color: white;
-    background: #28A745; /* Fresh Green */
-}
-
-.button_style_4 {
-    color: black;
-    background: #FFC107; /* Bright Yellow */
-}
-
-.button_style_5 {
-    color: white;
-    background: #FD7E14; /* Vibrant Orange */
-}
-
 .button {
+    color: black;
+    background: white;
     border: none;
     padding: 1.5rem 7rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);

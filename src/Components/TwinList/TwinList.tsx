@@ -5,7 +5,8 @@ interface TwinListProps {
         Background?: string;
         ListBackground?: string;
         TextColor?: string;
-        ButtonStyle?: number; // Only available value is 1 - 5
+        ButtonBackground?: string;
+        ButtonTextColor?: string;
     }
     List: {
         Title: string;
@@ -21,8 +22,9 @@ export const TwinList = ({
         Style: { 
             Background, 
             ListBackground, 
-            TextColor, 
-            ButtonStyle = 1  // Set default value here
+            ButtonBackground,
+            ButtonTextColor,
+            TextColor,
         } = {} 
     }: TwinListProps) => {
     return (
@@ -46,7 +48,11 @@ export const TwinList = ({
                         <h1>{item.Title}</h1>
                         <p>{item.Description}</p>
                         <button
-                            className={`${style.button} ${style[`button_style_${ButtonStyle}`]}`} // Uses default if none is provided
+                            className={`${style.button}`}
+                            style={{
+                                ...(ButtonBackground ? {background: ButtonBackground} : undefined),
+                                ...(ButtonTextColor ? {color: ButtonTextColor} : undefined)
+                            }}
                             onClick={item.ButtonOnClick}
                         >
                             {item.ButtonLabel}
