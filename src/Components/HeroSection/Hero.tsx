@@ -1,7 +1,6 @@
 import style from './Hero.module.css'
 
 interface HeroProps {
-    Background?: string;
     Title: string;
     Description: string;
     ButtonLabel: string;
@@ -9,12 +8,17 @@ interface HeroProps {
     Logo: string;
     RoundedLogo?: boolean
     HasDarkCover?: boolean;
+    Style?: {
+        BackgroundImage?: string;
+        ButtonBackground?: string;
+        ButtonTextColor?: string;
+    }
 }
 
-export const Hero = ({RoundedLogo=false, HasDarkCover=true, Background, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
+export const Hero = ({RoundedLogo=false, HasDarkCover=true, Style, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
     return (
         <header 
-            style={Background ? {backgroundImage: Background} : undefined}
+            style={Style?.BackgroundImage ? {backgroundImage: `url('${Style.BackgroundImage}')`} : undefined}
             className={style.hero}
             >
             <div 
@@ -35,6 +39,10 @@ export const Hero = ({RoundedLogo=false, HasDarkCover=true, Background, Title, D
                     <button 
                         onClick={ButtonOnClick}
                         className={style.button}
+                        style={{
+                            ...(Style?.ButtonBackground ? {background: Style.ButtonBackground} : undefined),
+                            ...(Style?.ButtonTextColor ? {color: Style.ButtonTextColor} : undefined),
+                        }}
                         >
                         {ButtonLabel}
                     </button>

@@ -339,12 +339,16 @@ const App = () => {
 
             {/* Hero Section Usage */}
             <Hero
-                Background="url('image/space.jpg')"
                 Title="Sample Website"
                 Description="Sample Description"
                 ButtonLabel="CTA Button"
                 ButtonOnClick={() => alert("You clicked the CTA")}
                 Logo="image/Khian_Icon_Logo.png"
+                Style={{
+                    BackgroundImage:"image/space.jpg",
+                    ButtonBackground: "rgb(25, 60, 216)",
+                    ButtonTextColor: "rgb(255, 255, 255)"
+                }}
                 // RoundedLogo={true} // Optional for rounded logo, by default it is false
                 // HasDarkCover={false} // Optional for Background if it is solid color
             />
