@@ -1,0 +1,177 @@
+.everything {
+    display:flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    background: rgb(20, 20, 20);
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    color: white;
+    overflow-y: auto;
+    padding: 2%;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.content {
+    flex: 1;
+    transition: 0.3s;
+    z-index: 5;
+}
+
+.logo_container {
+    display: flex;         
+    align-items: center;
+}
+
+.close_button {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    color: white;
+    font-size: 2.5rem;
+    transition: 0.3s;
+}
+
+.close_button::before {
+    content: "←";
+}
+
+.close_button:hover {
+    transform:scale(1.2);
+}
+
+.logo {
+    width: 5vw;             
+    height: 5vw;           
+    object-fit: cover;     
+}
+
+.logo_text {
+    margin-left: 10px;
+    font-size: 1.25rem;
+}
+
+.hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.hamburger {
+    display: block;
+    position: fixed;
+    top: 0.5rem;
+    left: -20%;
+    color: white;
+    margin: 0.5rem 1rem;
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 30pt;
+    cursor: pointer;
+    z-index: 10;
+    background: rgba(95, 95, 95, 0.6);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8)) drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
+    transition: 0.3s;
+}
+.hamburger::before {
+    content: "☰";
+    color: white;
+}
+
+.hamburger_shown {
+    left: 0.5rem;
+}
+
+.hamburger_hidden {
+    left: -20%;
+}
+
+.sidebar_shown {
+    left: 0;
+}
+
+.sidebar_hidden {
+    left: -20%;
+}
+
+.content_expanded {
+    margin-left: 0%;
+}
+
+.content_shrinked {
+    margin-left: 20%;
+}
+
+.buttons_list {
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    overflow-y: auto;
+}
+
+.sidebar_button {
+    width: 100%;
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+}
+
+.sidebar_button:hover {
+    background: rgba(255, 255, 255, 0.254);
+}
+
+.button_logo {
+    width: 10%;
+    object-fit: contain;
+}
+
+.sidebar_footer {
+    margin-top: 10%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 50%;
+        padding-top: 20%;
+    }
+    .logo_container {
+        flex-direction: column;
+    }
+    .content {
+        width: 50%;
+    }
+    .logo {
+        width: 12vw;             
+        height: 12vw;          
+    }
+    .everything {
+        overflow-x: hidden;
+    }
+    .sidebar_hidden {
+        left: -50%;
+    }
+    .content_shrinked {
+        margin-left: 0%;
+    }
+    .buttons_list {
+        height: 55%;
+    }
+}

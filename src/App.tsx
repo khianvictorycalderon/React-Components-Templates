@@ -229,6 +229,87 @@ const App = () => {
 
     // ------------------------------------------------
 
+    // SideBar Buttons
+    const SideBarButtons = [
+        {
+            Logo: "image/Khian_Icon_Logo.png",
+            Label: "Button 1",
+            OnClick:() => alert("You clicked Button 1")
+        },
+        {
+            Logo: "image/tkinter.png",
+            Label: "Button 2",
+            OnClick:() => alert("You clicked Button 2")
+        },
+        {
+            Logo: "image/tiktok.png",
+            Label: "Button 3",
+            OnClick:() => alert("You clicked Button 3")
+        },
+        {
+            Logo: "image/Khian_Icon_Logo.png",
+            Label: "Button 1",
+            OnClick:() => alert("You clicked Button 1")
+        },
+        {
+            Logo: "image/tkinter.png",
+            Label: "Button 2",
+            OnClick:() => alert("You clicked Button 2")
+        },
+        {
+            Logo: "image/tiktok.png",
+            Label: "Button 3",
+            OnClick:() => alert("You clicked Button 3")
+        },
+        {
+            Logo: "image/Khian_Icon_Logo.png",
+            Label: "Button 1",
+            OnClick:() => alert("You clicked Button 1")
+        },
+        {
+            Logo: "image/tkinter.png",
+            Label: "Button 2",
+            OnClick:() => alert("You clicked Button 2")
+        },
+        {
+            Logo: "image/tiktok.png",
+            Label: "Button 3",
+            OnClick:() => alert("You clicked Button 3")
+        },
+        {
+            Logo: "image/Khian_Icon_Logo.png",
+            Label: "Button 1",
+            OnClick:() => alert("You clicked Button 1")
+        },
+        {
+            Logo: "image/tkinter.png",
+            Label: "Button 2",
+            OnClick:() => alert("You clicked Button 2")
+        },
+        {
+            Logo: "image/tiktok.png",
+            Label: "Button 3",
+            OnClick:() => alert("You clicked Button 3")
+        },
+        {
+            Logo: "image/Khian_Icon_Logo.png",
+            Label: "Button 1",
+            OnClick:() => alert("You clicked Button 1")
+        },
+        {
+            Logo: "image/tkinter.png",
+            Label: "Button 2",
+            OnClick:() => alert("You clicked Button 2")
+        },
+        {
+            Logo: "image/tiktok.png",
+            Label: "Button 3",
+            OnClick:() => alert("You clicked Button 3")
+        },
+    ]
+
+    // ------------------------------------------------
+
     return (
         <SideBar
             Logo="image/Khian_Icon_Logo.png"
@@ -237,6 +318,14 @@ const App = () => {
                 Background: "rgb(21, 21, 21)", // Optional, if you want to customize the background
                 Textcolor: "rgb(236, 236, 236)"
             }}
+            Buttons={SideBarButtons}
+            Footer={
+                <>
+                    <h4>Website Title</h4>
+                    <hr/>
+                    <p>All rights reserved <a href=""></a>.</p>
+                </>
+            }
             >
             {/* SideBar Usage (Must be at the top) */}
             

@@ -16,6 +16,26 @@ A reusable `NavBar` component built with TypeScript and React for creating a res
   - `imagePath`: A string representing the image URL for the logo.
   - `href` *(optional)*: A string representing the URL that the logo links to.
 
+## SideBar
+
+A reusable `SideBar` component built with TypeScript and React. It provides a collapsible sidebar with customizable styles, dynamic button actions, and a footer section.
+
+### `SideBarProps`
+
+- **`children`**: The content that will be displayed alongside the sidebar.
+- **`Logo`**: A string containing the URL of the sidebar logo.
+- **`Title`**: A string representing the sidebar title.
+- **`Style`** *(optional)*: An object for customizing the appearance of the sidebar.
+  - **`Background`** *(optional)*: The background color of the sidebar.
+  - **`Textcolor`** *(optional)*: The color of the text inside the sidebar.
+
+- **`Buttons`**: An array of objects representing the buttons inside the sidebar. Each object contains:
+  - **`Logo`** *(optional)*: A URL string pointing to the button's icon.
+  - **`Label`**: The text displayed on the button.
+  - **`OnClick`**: A callback function triggered when the button is clicked.
+
+- **`Footer`** *(optional)*: A React node for displaying custom footer content inside the sidebar.
+
 ## Hero Section
 
 A reusable `Hero` component built with TypeScript and React for creating a customizable hero section with a background image or color, title, description, button, and an optional logo.
