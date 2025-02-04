@@ -172,4 +172,7 @@
     .buttons_list {
         height: 55%;
     }
+    .hamburger {
+        margin: 0.1rem;
+    }
 }
