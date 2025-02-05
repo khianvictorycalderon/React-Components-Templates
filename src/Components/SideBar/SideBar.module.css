@@ -1,8 +1,3 @@
-.everything {
-    display:flex;
-    flex-direction: row;
-}
-
 .sidebar {
     background: rgb(20, 20, 20);
     width: 20%;
@@ -13,13 +8,7 @@
     padding: 2%;
     overflow-x: hidden;
     transition: 0.3s;
-    z-index: 10;
-}
-
-.content {
-    flex: 1;
-    transition: 0.3s;
-    z-index: 5;
+    z-index: 200;
 }
 
 .logo_container {
@@ -81,7 +70,7 @@
     line-height: 45px;
     font-size: 30pt;
     cursor: pointer;
-    z-index: 10;
+    z-index: 200;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8)) drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
     transition: 0.3s;
 }
@@ -104,14 +93,6 @@
 
 .sidebar_hidden {
     left: -20%;
-}
-
-.content_expanded {
-    margin-left: 0%;
-}
-
-.content_shrinked {
-    margin-left: 20%;
 }
 
 .buttons_list {
@@ -153,21 +134,12 @@
     .logo_container {
         flex-direction: column;
     }
-    .content {
-        width: 50%;
-    }
     .logo {
         width: 25vw;             
         height: 25vw;          
     }
-    .everything {
-        overflow-x: hidden;
-    }
     .sidebar_hidden {
         left: -70%;
-    }
-    .content_shrinked {
-        margin-left: 0%;
     }
     .buttons_list {
         height: 55%;

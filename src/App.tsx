@@ -349,7 +349,9 @@ const App = () => {
     // ------------------------------------------------
 
     return (
-        <SideBar
+        <>
+            {/* SideBar Usage */}
+            <SideBar
             Logo="image/Khian_Icon_Logo.png"
             Title="Sample Title "
             Style={{
@@ -365,9 +367,8 @@ const App = () => {
                 </>
             }
             InitiallyShown={true} // By default, it is true that it is initially shown
-            >
-            {/* SideBar Usage (Must be at the top) */}
-            
+            />
+
             {/* Navigation Bar Usage */}
             <NavBar 
                 Buttons={ButtonList} 
@@ -480,7 +481,7 @@ const App = () => {
                 MiscInfo={MiscInfo}
                 Style={FooterStyle}
             />
-        </SideBar>
+        </>
     );
 };
 
