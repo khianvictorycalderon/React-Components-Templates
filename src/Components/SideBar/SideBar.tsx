@@ -68,7 +68,10 @@ export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = t
                         <div 
                             key={index} 
                             className={style.sidebar_button}
-                            onClick={item.OnClick}
+                            onClick={() => {
+                                item.OnClick();
+                                !(window.innerWidth > 768) ? setIsSideBarShown(false) : {}
+                            }}
                             >
                             {item.Logo && <img src={item.Logo} className={style.button_logo}/>}
                             <div className={style.center}>{item.Label}</div>
