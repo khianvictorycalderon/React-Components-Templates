@@ -17,23 +17,35 @@ interface SideBarProps {
     InitiallyShown?: boolean;
 }
 
-export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = true}: SideBarProps) => {
-    const [isSideBarShown, setIsSideBarShown] = useState<boolean>(InitiallyShown);
+export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = false}: SideBarProps) => {
+    const [isSideBarShown, setIsSideBarShown] = useState<boolean>(() => {
+        const storedState = localStorage.getItem("isSideBarShown");
+        return storedState !== null ? JSON.parse(storedState) : InitiallyShown;
+    });
+
     useEffect(() => {
-        if (window.innerWidth > 768) { // Only apply margin on desktop
+        localStorage.setItem("isSideBarShown", JSON.stringify(isSideBarShown));
+        
+        if (window.innerWidth > 768) {
             document.body.style.transition = "0.3s";
             document.body.style.marginLeft = isSideBarShown ? "20%" : "0%";
-        } else if (window.innerWidth <= 768) {
+        } else {
             document.body.style.marginLeft = "0";
         }
-    
+
         return () => {
             if (window.innerWidth > 768) {
                 document.body.style.transition = "";
             }
         };
     }, [isSideBarShown]);
-    
+
+    const handleSideBarHiddenMobile = () => {
+        if (window.innerWidth <= 768) {
+            localStorage.setItem("isSideBarShown", "false");
+        }
+    }
+
     return (
         <>
             <div 
@@ -70,8 +82,8 @@ export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = t
                             className={style.sidebar_button}
                             onClick={() => {
                                 item.OnClick();
-                                !(window.innerWidth > 768) ? setIsSideBarShown(false) : {}
-                            }}
+                                handleSideBarHiddenMobile();
+                            }}                            
                             >
                             {item.Logo && <img src={item.Logo} className={style.button_logo}/>}
                             <div className={style.center}>{item.Label}</div>
@@ -84,4 +96,5 @@ export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = t
             </div>
         </>
     )
+}
 }
