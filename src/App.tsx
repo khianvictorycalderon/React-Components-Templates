@@ -364,6 +364,7 @@ const App = () => {
                     <p>All rights reserved <a href=""></a>.</p>
                 </>
             }
+            InitiallyShown={true} // By default, it is true that it is initially shown
             >
             {/* SideBar Usage (Must be at the top) */}
             

@@ -15,10 +15,11 @@ interface SideBarProps {
         OnClick: () => void;
     }[];
     Footer?: React.ReactNode;
+    InitiallyShown?: boolean;
 }
 
-export const SideBar = ({children, Style, Logo, Title, Buttons, Footer}: SideBarProps) => {
-    const [isSideBarShown, setIsSideBarShown] = useState<boolean>(true);
+export const SideBar = ({children, Style, Logo, Title, Buttons, Footer, InitiallyShown = true}: SideBarProps) => {
+    const [isSideBarShown, setIsSideBarShown] = useState<boolean>(InitiallyShown);
     return (
         <>
             <div 
