@@ -18,33 +18,33 @@ const App = () => {
         // NavBarBackground: "green"
     }
     const Logo = {
-        imagePath: "image/Khian_Icon_Logo.png",
-        href: "https://khian.netlify.app/"
+        ImagePath: "image/Khian_Icon_Logo.png",
+        Href: "https://khian.netlify.app/"
     }
     const ButtonList = [
         {
-            label: "Home",
-            onClick: () => alert("Navigating to Home"),
+            Label: "Home",
+            OnClick: () => alert("Navigating to Home"),
         },
         {
-            label: "About",
-            onClick: () => alert("Navigating to About"),
+            Label: "About",
+            OnClick: () => alert("Navigating to About"),
         },
         {
-            label: "Contact",
-            onClick: () => alert("Navigating to Contact"),
+            Label: "Contact",
+            OnClick: () => alert("Navigating to Contact"),
         },
         {
-            label: "Services",
-            onClick: () => alert("Navigating to Services"),
+            Label: "Services",
+            OnClick: () => alert("Navigating to Services"),
         },
         {
-            label: "FAQ",
-            onClick: () => alert("Navigating to FAQ"),
+            Label: "FAQ",
+            OnClick: () => alert("Navigating to FAQ"),
         },
         {
-            label: "Blog",
-            onClick: () => alert("Navigating to Blog"),
+            Label: "Blog",
+            OnClick: () => alert("Navigating to Blog"),
         }
     ];    
     // ------------------------------------------------

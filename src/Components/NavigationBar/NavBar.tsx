@@ -7,12 +7,12 @@ interface NavBarProps {
         NavBarBackground?: string;
     };
     Buttons: {
-        label: string;
-        onClick: () => void;
+        Label: string;
+        OnClick: () => void;
     }[];
     Logo?: {
-        imagePath: string;
-        href?: string;
+        ImagePath: string;
+        Href?: string;
     };
 }
 
@@ -43,12 +43,12 @@ export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
                 <nav className={style.navbar} style={
                     Style?.NavBarBackground ? {background: Style.NavBarBackground} : undefined
                 }>
-                    {Logo && Logo?.href ? (
-                        <a href={Logo.href}>
-                            <img className={style.logo} src={Logo.imagePath} />
+                    {Logo && Logo?.Href ? (
+                        <a href={Logo.Href}>
+                            <img className={style.logo} src={Logo.ImagePath} />
                         </a>
                         ) : (
-                            <img className={style.logo} src={Logo?.imagePath} />
+                            <img className={style.logo} src={Logo?.ImagePath} />
                         )
                     }
                     {isMobile && (
@@ -64,16 +64,16 @@ export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
                         {Buttons.map((item) => (
                             <button
                                 className={style.button}
-                                key={item.label}
+                                key={item.Label}
                                 onClick={() => {
-                                    item.onClick();
+                                    item.OnClick();
                                     setIsMobileMenuShown(false);
                                 }}
                                 style = {
                                     Style?.ButtonTextColor ? {color: Style.ButtonTextColor} : undefined
                                 }
                             >
-                                {item.label}
+                                {item.Label}
                             </button>
                         ))}
                     </div>
