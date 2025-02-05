@@ -7,6 +7,7 @@ import { PhotoGrid } from "./Components/PhotoGrid/PhotoGrid";
 import { Banner } from "./Components/Banner/Banner";
 import { SideBar } from "./Components/SideBar/SideBar";
 import { TextGrid } from "./Components/TextGrid/TextGrid";
+import { TextSection } from "./Components/TextSection/TextSection";
 
 const App = () => {
 
@@ -425,6 +426,15 @@ const App = () => {
                     TextBorderColor: "rgb(243, 243, 243)"
                 }}
             />
+            {/* TextSection Usage */}
+            <TextSection
+                Title="Sample Title"
+                Content={<p>Hello World</p>}
+                Style={{
+                    Background: "rgb(34, 34, 34)",
+                    TextColor: "rgb(249, 249, 249)"
+                }}
+            />
 
             {/* Banner Usage (Multiple Banner for Multiple Images) */}
             <Banner
@@ -432,7 +442,7 @@ const App = () => {
                 Description={
                     <>
                         <p>This is a Description</p>
-                        <button className="btn btn-primary">Click Me</button>
+                        <button onClick={() => alert("You clicked me")} className="btn btn-primary">Click Me</button>
                     </>
                 }
                 BackgroundImage="image/space.jpg"
@@ -442,7 +452,7 @@ const App = () => {
                 Description={
                     <>
                         <p>This is a Description</p>
-                        <button className="btn btn-primary">Click Me</button>
+                        <button onClick={() => alert("You clicked me")} className="btn btn-primary">Click Me</button>
                     </>
                 }
                 BackgroundImage="image/sample_bg1.jpg"
