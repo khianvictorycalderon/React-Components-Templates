@@ -113,6 +113,12 @@
     align-items: center;
 }
 
+.center {
+    width: 100%;
+    text-align: center;
+    padding-right: 10%;
+}
+
 .sidebar_button:hover {
     background: rgba(255, 255, 255, 0.254);
 }

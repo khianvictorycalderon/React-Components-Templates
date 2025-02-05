@@ -71,7 +71,7 @@ export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = t
                             onClick={item.OnClick}
                             >
                             {item.Logo && <img src={item.Logo} className={style.button_logo}/>}
-                            <span>{item.Label}</span>
+                            <div className={style.center}>{item.Label}</div>
                         </div>
                     ))}
                 </div>

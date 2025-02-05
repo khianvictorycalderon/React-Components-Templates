@@ -237,22 +237,22 @@ const App = () => {
     const SideBarButtons = [
         {
             Logo: "image/Khian_Icon_Logo.png",
-            Label: "Button 1",
+            Label: "Home",
             OnClick:() => alert("You clicked Button 1")
         },
         {
             Logo: "image/tkinter.png",
-            Label: "Button 2",
+            Label: "Services",
             OnClick:() => alert("You clicked Button 2")
         },
         {
             Logo: "image/tiktok.png",
-            Label: "Button 3",
+            Label: "Privacy Policy",
             OnClick:() => alert("You clicked Button 3")
         },
         {
             Logo: "image/Khian_Icon_Logo.png",
-            Label: "Button 1",
+            Label: "Terms & Condition",
             OnClick:() => alert("You clicked Button 1")
         },
         {
