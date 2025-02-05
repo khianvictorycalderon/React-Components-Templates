@@ -201,6 +201,7 @@ const App = () => {
         TextColor: "rgb(46, 46, 46)",
         ButtonBackground: "rgb(104, 30, 160)",
         ButtonTextColor: "rgb(255, 248, 248)",
+        ReverseOrder: false // false by default
     }
 
     // ------------------------------------------------
@@ -392,6 +393,10 @@ const App = () => {
             <TwinList
                 List={TwinListData}
                 Style={TwinListStyle}
+                Layout={{
+                    FullSize: false, // false by default
+                    HasButton: true // true by default
+                }}
             />
 
             {/* Cards Usage */}
@@ -415,7 +420,7 @@ const App = () => {
                 Text={TextGridData}
                 Style={{
                     Background: "rgb(45, 45, 45)",
-                    TextBackground: "rgb(30, 30, 30)",
+                    TextBackground: "rgba(30, 30, 30, 0)",
                     TextColor: "rgb(255, 255, 255)",
                     TextBorderColor: "rgb(243, 243, 243)"
                 }}

@@ -7,14 +7,19 @@ interface TwinListProps {
         TextColor?: string;
         ButtonBackground?: string;
         ButtonTextColor?: string;
+        ReverseOrder?: boolean;
     }
     List: {
         Title: string;
         Description: string;
         Image: string;
-        ButtonLabel: string;
-        ButtonOnClick: () => void;
+        ButtonLabel?: string;
+        ButtonOnClick?: () => void;
     }[];
+    Layout?: {
+        FullSize?: boolean;
+        HasButton?: boolean
+    }
 }
 
 export const TwinList = ({ 
@@ -25,16 +30,24 @@ export const TwinList = ({
             ButtonBackground,
             ButtonTextColor,
             TextColor,
-        } = {} 
+            ReverseOrder = false
+        } = {},
+        Layout: {
+            FullSize = false,
+            HasButton = true
+        } = {}
     }: TwinListProps) => {
     return (
         <section 
-            className={style.twin_list_section}
+            className={FullSize ? style.twin_list_section_full_size : style.twin_list_section}
             style={Background ? { background: Background } : undefined}
         >
             {List.map((item, index) => (
                 <div 
-                    className={`${style.single_list} ${index % 2 == 0 ? style.reverse_order : ''}`} 
+                    className={`
+                        ${FullSize ? style.single_list_full_size : style.single_list}
+                        ${(index % 2 === 0) !== ReverseOrder ? style.reverse_order : ''}
+                    `}
                     style={{
                         ...(ListBackground ? { background: ListBackground } : undefined),
                         ...(TextColor ? { color: TextColor } : undefined)
@@ -42,12 +55,15 @@ export const TwinList = ({
                     key={index}
                 >
                     <div>
-                        <img src={item.Image} className={style.side_image} />
+                        <img src={item.Image} 
+                            className={`${FullSize ? style.side_image_full_size : style.side_image}`}
+                            />
                     </div>
                     <div className={style.content}>
                         <h1>{item.Title}</h1>
                         <p>{item.Description}</p>
-                        <button
+                        {HasButton && (
+                            <button
                             className={`${style.button}`}
                             style={{
                                 ...(ButtonBackground ? {background: ButtonBackground} : undefined),
@@ -57,6 +73,7 @@ export const TwinList = ({
                         >
                             {item.ButtonLabel}
                         </button>
+                        )}
                     </div>
                 </div>
             ))}
