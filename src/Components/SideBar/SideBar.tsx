@@ -97,4 +97,3 @@ export const SideBar = ({Style, Logo, Title, Buttons, Footer, InitiallyShown = f
         </>
     )
 }
-}
