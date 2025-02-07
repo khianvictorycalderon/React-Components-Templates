@@ -1,23 +1,27 @@
+/* Hero Section */
 .hero {
     position: relative;
-    background-size: cover;
-    background-position: center;
     z-index: 3;
 }
 
+/* Content Section */
 .content {
     top: 0;
     left: 0;
     color: white;
     z-index: 5;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    -webkit-grid-template-columns: 1fr 1fr; /* Safari */
+    -moz-grid-template-columns: 1fr 1fr; /* Firefox */
+    grid-template-columns: 1fr 1fr; /* Standard */
 }
 
+/* Content Box */
 .content_box {
     align-content: center;
 }
 
+/* Button Styling */
 .button {
     border: none;
     padding: 1.2rem 7rem;
@@ -27,17 +31,24 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Button Hover Effects */
 .button:hover {
-    scale: 1.1;
+    -webkit-transform: scale(1.1); /* Safari */
+    -moz-transform: scale(1.1); /* Firefox */
+    -o-transform: scale(1.1); /* Opera (Pre-Chromium) */
+    -ms-transform: scale(1.1); /* IE 10+ */
+    transform: scale(1.1); /* Standard */
     filter: brightness(110%);
     box-shadow: 2px 2px 10px rgba(0, 0, 0);
 }
 
+/* Logo Container */
 .logo_container {
     padding: 5rem;
     text-align: center;
 }
 
+/* Logo Styling */
 .logo {
     height: 60vh;
     width: 60vh;
@@ -45,22 +56,43 @@
     filter: drop-shadow(0px 0px 10px black);
 }
 
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
     .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: -webkit-flex; /* Safari */
+        display: -moz-flex; /* Firefox */
+        display: -ms-flexbox; /* IE 10+ */
+        display: -o-flex; /* Opera (Pre-Chromium) */
+        display: flex; /* Standard */
+        -webkit-flex-direction: column; /* Safari */
+        -moz-flex-direction: column; /* Firefox */
+        -ms-flex-direction: column; /* IE 10+ */
+        -o-flex-direction: column; /* Opera (Pre-Chromium) */
+        flex-direction: column; /* Standard */
+        -webkit-align-items: center; /* Safari */
+        -moz-align-items: center; /* Firefox */
+        -ms-align-items: center; /* IE 10+ */
+        -o-align-items: center; /* Opera (Pre-Chromium) */
+        align-items: center; /* Standard */
+        -webkit-justify-content: center; /* Safari */
+        -moz-justify-content: center; /* Firefox */
+        -ms-justify-content: center; /* IE 10+ */
+        -o-justify-content: center; /* Opera (Pre-Chromium) */
+        justify-content: center; /* Standard */
         text-align: center;
         padding: 2rem;
         height: auto;
-        padding-bottom:5rem;
+        padding-bottom: 5rem;
     }
 
     .logo {
         max-height: 50vw;
         max-width: 50vw;
-        transform: scale(1.3);
+        -webkit-transform: scale(1.3); /* Safari */
+        -moz-transform: scale(1.3); /* Firefox */
+        -ms-transform: scale(1.3); /* IE 10+ */
+        -o-transform: scale(1.3); /* Opera (Pre-Chromium) */
+        transform: scale(1.3); /* Standard */
     }
 
     .button {

@@ -1,21 +1,58 @@
+/* General Banner Styles */
 .banner {
     width: 100%;
     height: 85vh;
     margin: 0;
+    -webkit-box-sizing: border-box; /* Safari */
+    -moz-box-sizing: border-box; /* Firefox */
+    box-sizing: border-box; /* Standard */
 }
 
+/* Content Styling */
 .content {
-    align-content: center;
-    justify-items: center;
+    -ms-flex-line-pack: center;
+    -webkit-align-content: center; /* Safari */
+    -moz-align-content: center; /* Firefox */
+    -ms-align-content: center; /* IE 10+ */
+    align-content: center; /* Standard */
+
+    -webkit-align-items: center; /* Safari */
+    -moz-align-items: center; /* Firefox */
+    -ms-align-items: center; /* IE 10+ */
+    align-items: center; /* Standard */
+
+    -webkit-justify-content: center; /* Safari */
+    -moz-justify-content: center; /* Firefox */
+    -ms-justify-content: center; /* IE 10+ */
+    justify-content: center; /* Standard */
+
     text-align: center;
     width: 100%;
     height: 100%;
     color: white;
     background: rgba(0, 0, 0, 0.472);
+    background-color: rgba(0, 0, 0, 0.47); /* Fallback for older browsers */
 }
 
-@media (max-width:768px) {
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
     .banner {
         height: 90vh;
     }
+}
+
+/* Vendor prefixes for animation */
+@-webkit-keyframes slide { /* Safari */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+@-o-keyframes slide { /* Opera */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes slide { /* Standard */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
 }

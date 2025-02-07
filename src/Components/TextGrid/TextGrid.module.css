@@ -1,5 +1,9 @@
+/* Text Grid */
 .text_grid {
-    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Firefox */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex; /* Standard */
     flex-direction: row;
     flex-wrap: wrap;
     padding: 4rem;
@@ -12,6 +16,7 @@
     text-align: center;
 }
 
+/* Label */
 .label {
     background: rgb(178, 178, 178);
     color: black;
@@ -23,10 +28,12 @@
     transition: 0.3s;
 }
 
+/* Label Hover */
 .label:hover {
     background: rgba(255, 255, 255, 0.11) !important;
 }
 
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
     .text_grid {
         flex-direction: column;

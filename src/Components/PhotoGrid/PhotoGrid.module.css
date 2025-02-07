@@ -1,19 +1,28 @@
+/* Photo Grid */
 .photo_grid {
     padding: 2rem;
-    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Firefox */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex; /* Standard */
     gap: 5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+/* Photo Container */
 .photo_container {
     align-content: center;
     text-align: center;
-    align-items: center;
+    -webkit-align-items: center; /* Safari */
+    -moz-align-items: center; /* Firefox */
+    -ms-align-items: center; /* IE 10+ */
+    align-items: center; /* Standard */
     justify-content: center;
     justify-items: center;
 }
 
+/* Photo Styling */
 .photo {
     object-fit: contain;
     cursor: pointer;
@@ -22,11 +31,16 @@
     transition: 0.3s;
 }
 
+/* Photo Hover Effects */
 .photo:hover {
-    scale: 1.2;
+    -webkit-transform: scale(1.2); /* Safari */
+    -moz-transform: scale(1.2); /* Firefox */
+    -ms-transform: scale(1.2); /* IE 10+ */
+    transform: scale(1.2); /* Standard */
     filter: brightness(120%);
 }
 
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
     .photo_grid {
         gap: 2.5rem;

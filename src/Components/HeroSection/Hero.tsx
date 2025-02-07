@@ -18,7 +18,7 @@ interface HeroProps {
 export const Hero = ({RoundedLogo=false, HasDarkCover=true, Style, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
     return (
         <header 
-            style={Style?.BackgroundImage ? {backgroundImage: `url('${Style.BackgroundImage}')`} : undefined}
+            style={Style?.BackgroundImage ? {backgroundImage: `url('${Style.BackgroundImage}')`, backgroundAttachment: "fixed", backgroundPosition: "center", backgroundSize: "cover" } : undefined}
             className={style.hero}
             >
             <div 

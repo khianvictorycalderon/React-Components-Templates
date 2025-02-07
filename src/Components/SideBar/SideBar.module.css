@@ -1,3 +1,4 @@
+/* Sidebar */
 .sidebar {
     background: rgb(20, 20, 20);
     width: 20%;
@@ -11,11 +12,16 @@
     z-index: 200;
 }
 
+/* Logo Container */
 .logo_container {
-    display: flex;         
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Firefox */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex; /* Standard */
     align-items: center;
 }
 
+/* Close Button */
 .close_button {
     position: absolute;
     top: 0;
@@ -33,20 +39,26 @@
 }
 
 .close_button:hover {
-    transform:scale(1.2);
+    -webkit-transform: scale(1.2); /* Safari */
+    -moz-transform: scale(1.2); /* Firefox */
+    -ms-transform: scale(1.2); /* IE 10+ */
+    transform: scale(1.2); /* Standard */
 }
 
+/* Logo */
 .logo {
-    width: 5vw;             
-    height: 5vw;           
-    object-fit: cover;     
+    width: 5vw;
+    height: 5vw;
+    object-fit: cover;
 }
 
+/* Logo Text */
 .logo_text {
     margin-left: 10px;
     font-size: 1.25rem;
 }
 
+/* Horizontal Rule */
 .hr {
     display: block;
     margin-top: 0.5em;
@@ -55,6 +67,7 @@
     border-top: 1px solid #ccc;
 }
 
+/* Hamburger Menu */
 .hamburger {
     display: block;
     position: fixed;
@@ -74,6 +87,7 @@
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8)) drop-shadow(-5px -5px 10px rgba(0, 0, 0, 0.8));
     transition: 0.3s;
 }
+
 .hamburger::before {
     content: "☰";
     color: white;
@@ -95,13 +109,18 @@
     left: -20%;
 }
 
+/* Button List */
 .buttons_list {
-    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Firefox */
+    display: -ms-flexbox; /* IE 10+ */
+    display: flex; /* Standard */
     flex-direction: column;
     height: 65%;
     overflow-y: auto;
 }
 
+/* Sidebar Button */
 .sidebar_button {
     width: 100%;
     padding: 3%;
@@ -113,26 +132,31 @@
     align-items: center;
 }
 
+/* Center Text */
 .center {
     width: 100%;
     text-align: center;
     padding-right: 10%;
 }
 
+/* Sidebar Button Hover */
 .sidebar_button:hover {
     background: rgba(255, 255, 255, 0.254);
 }
 
+/* Button Logo */
 .button_logo {
     width: 10%;
     object-fit: contain;
 }
 
+/* Sidebar Footer */
 .sidebar_footer {
     margin-top: 10%;
     text-align: center;
 }
 
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
     .sidebar {
         width: 70%;
@@ -141,8 +165,8 @@
         flex-direction: column;
     }
     .logo {
-        width: 25vw;             
-        height: 25vw;          
+        width: 25vw;
+        height: 25vw;
     }
     .sidebar_hidden {
         left: -70%;
