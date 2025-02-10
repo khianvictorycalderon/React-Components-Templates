@@ -8,6 +8,7 @@ import { Banner } from "./Components/Banner/Banner";
 import { SideBar } from "./Components/SideBar/SideBar";
 import { TextGrid } from "./Components/TextGrid/TextGrid";
 import { TextSection } from "./Components/TextSection/TextSection";
+import { CenteredBoxBanner } from "./Components/CenteredBoxBanner/CenteredBoxBanner";
 
 const App = () => {
 
@@ -412,6 +413,24 @@ const App = () => {
                 }}
             />
 
+            {/* Centered Boc Banner Usage */}
+            <CenteredBoxBanner
+                Content={
+                    <>
+                        This is some Content<br/>
+                        <br/>
+                        Must not overlap with x and y
+                        <br/><br/>
+                        SomeContent SomeContent SomeContent
+                    </>
+                }
+                Style={{
+                    BackgroundImage: "image/everest.jpg",
+                    TextColor: "rgb(255, 255, 255)",
+                    BoxBackgroundColor: "rgba(61, 61, 61, 0.6)"
+                }}
+            />
+
             {/* PhotoGrid Usage */}
             <PhotoGrid
                 Background="rgb(33, 33, 33)"
@@ -428,6 +447,7 @@ const App = () => {
                     TextBorderColor: "rgb(243, 243, 243)"
                 }}
             />
+
             {/* TextSection Usage */}
             <TextSection
                 Title="Sample Title"
