@@ -9,6 +9,8 @@ import { SideBar } from "./Components/SideBar/SideBar";
 import { TextGrid } from "./Components/TextGrid/TextGrid";
 import { TextSection } from "./Components/TextSection/TextSection";
 import { CenteredBoxBanner } from "./Components/CenteredBoxBanner/CenteredBoxBanner";
+import { FormInput } from "./Components/FormInput/FormInput";
+import { useState } from "react";
 
 const App = () => {
 
@@ -349,6 +351,19 @@ const App = () => {
     
     // ------------------------------------------------
 
+    const [username, setUsername] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [age, setAge] = useState<number>(0);
+    const [birthdate, setBirthdate] = useState<string>("");
+    const [gender, setGender] = useState<string>("");
+    const [hobbies, setHobbies] = useState<string[]>([]);
+    const [country, setCountry] = useState<string>("");
+
+    const FormSubmitted = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        alert(`Username: ${username}\nEmail: ${email}\nAge: ${age}\nBirthdate: ${birthdate}\nGender: ${gender}\nCountry: ${country}\nHobbies: \n${hobbies}`);
+    }
+
     return (
         <>
             {/* SideBar Usage */}
@@ -417,17 +432,97 @@ const App = () => {
             <CenteredBoxBanner
                 Content={
                     <>
-                        This is some Content<br/>
-                        <br/>
-                        Must not overlap with x and y
-                        <br/><br/>
-                        SomeContent SomeContent SomeContent
+                        {/* Form Input Usage */}
+                        <FormInput
+                            Input={[
+                                {
+                                    Label: "Username",
+                                    ID: "username",
+                                    Pattern: "[a-zA-z]+",
+                                    Value: username,
+                                    OnChange: (e) => setUsername(e.target.value)
+                                },
+                                {
+                                    Label: "Email",
+                                    ID: "email",
+                                    Value: email,
+                                    OnChange: (e) => setEmail(e.target.value)
+                                },
+                                {
+                                    Label: "Age",
+                                    ID: "age",
+                                    Type: "number",
+                                    Value: age,
+                                    OnChange: (e) => setAge(Number(e.target.value))
+                                },
+                                {
+                                    Label: "Birthday",
+                                    ID: "bday",
+                                    Type: "date",
+                                    Value: birthdate,
+                                    IsRequired: true,
+                                    OnChange: (e) => setBirthdate(e.target.value)
+                                },
+                                {
+                                    Label: "Gender",
+                                    ID: "gender",
+                                    Type: "radio",
+                                    Name: "gender",
+                                    Value: gender,
+                                    OnChange: (e) => setGender(e.target.value),
+                                    Options: [
+                                        { label: "Male", value: "male" },
+                                        { label: "Female", value: "female" },
+                                    ],
+                                    IsRequired: true,
+                                },
+                                {
+                                    Label: "Country",
+                                    ID: "country",
+                                    Type: "select",
+                                    Value: country,
+                                    OnChange: (e) => setCountry(e.target.value),
+                                    Options: [
+                                        { label: "USA", value: "usa" },
+                                        { label: "Canada", value: "canada" },
+                                        { label: "UK", value: "uk" },
+                                    ],
+                                },
+                                {
+                                    Label: "Hobbies",
+                                    ID: "hobbies",
+                                    Type: "checkbox",
+                                    Value: hobbies, // Ensure this is an array of strings
+                                    OnChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+                                        const target = e.target as HTMLInputElement;
+                                        setHobbies((prev) =>
+                                            target.checked ? [...prev, target.value] : prev.filter((h) => h !== target.value)
+                                        );
+                                    },
+                                    Options: [
+                                        { label: "Reading", value: "reading" },
+                                        { label: "Gaming", value: "gaming" },
+                                        { label: "Cooking", value: "cooking" },
+                                    ],
+                                    IsRequired: false,
+                                },                                                                      
+                            ]}
+                            OnSubmit={(e) => FormSubmitted(e)}
+                            SubmitLabel="Custom Submit Message"
+                            Style={{
+                                Rows: 2,
+                                TextColor: "rgb(0, 0, 0)",
+                                BackgroundColor: "rgba(255, 255, 255, 0)",
+                                InputTextColor: "rgb(36, 36, 36)",
+                                InputBackgroundColor: "rgb(254, 254, 254)",
+                            }}
+                        />
                     </>
                 }
                 Style={{
                     BackgroundImage: "image/everest.jpg",
                     TextColor: "rgb(255, 255, 255)",
-                    BoxBackgroundColor: "rgba(61, 61, 61, 0.6)"
+                    BoxBackgroundColor: "rgba(255, 255, 255, 0.86)"
                 }}
             />
 
