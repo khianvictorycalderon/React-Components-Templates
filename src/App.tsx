@@ -11,6 +11,7 @@ import { TextSection } from "./Components/TextSection/TextSection";
 import { CenteredBoxBanner } from "./Components/CenteredBoxBanner/CenteredBoxBanner";
 import { FormInput } from "./Components/FormInput/FormInput";
 import { useState } from "react";
+import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
 
 const App = () => {
 
@@ -364,8 +365,59 @@ const App = () => {
         alert(`Username: ${username}\nEmail: ${email}\nAge: ${age}\nBirthdate: ${birthdate}\nGender: ${gender}\nCountry: ${country}\nHobbies: \n${hobbies}`);
     }
 
+    // Dictionary List:
+    const FullMatchDictionary = `
+        what are you=:=
+            I am a chat bot ready to assist you.
+        <and>how are you=:=
+            I am fine thank you for asking.
+            <or>Fine, thanks for asking.
+    `;
+    const PartialMatchDictionary = `
+        which|what,model,you=:=
+            I do not use any kind of <b>model</b> as I am trained from scratch.
+            <or>I do not use any <u>AI model</u> as I am manually trained from scratch.
+        <and>what,your,name=:=
+            My name is KVBot, ready to assist you.
+            <or>I'm KVBot.
+        <and>hello|hi=:=
+            Hi there, how are you?
+            <or>Hello there too, how can I help you?
+    `;
+    const UnknownFallBack = `
+        Sorry but i cannot understand you.,.
+        Apologies but i don't understand you.,.
+        My bad, I don't know what you are saying
+    `;
+
     return (
         <>
+            {/* Portable Chat Bot Usage */}
+            <PortableChatBot
+                Dictionary={{
+                    FullMatch: FullMatchDictionary,
+                    PartialMatch: PartialMatchDictionary,
+                    Unknown: UnknownFallBack
+                }}
+                Logo="image/kvbot.png"
+                IconStyle={{
+                    ShadowColor: "black"
+                }}
+                DefaultMessage="How can I help you?"
+                Style={{
+                    BackgroundColor: "rgb(76, 97, 102)",
+                    TextColor: "rgb(229, 229, 229)",
+                    ButtonBackgroundColor: "rgb(47, 116, 255)",
+                    ButtonTextColor: "rgb(249, 248, 255)",
+                    InputBackgroundColor: "rgb(240, 240, 240)",
+                    InputTextColor: "rgb(0, 0, 0)",
+                    BotMessageBackgroundColor: "rgb(43, 106, 148)",
+                    BotMessageTextColor: "rgb(241, 235, 235)",
+                    UserMessageBackgroundColor: "rgb(228, 228, 228)",
+                    UserMessageTextColor: "rgb(0, 0, 0)",
+                }}
+            />
+
             {/* SideBar Usage */}
             <SideBar
             Logo="image/Khian_Icon_Logo.png"
