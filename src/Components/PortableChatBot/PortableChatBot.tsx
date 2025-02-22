@@ -4,6 +4,7 @@ import { Respond } from './Response';
 
 interface PortableChatBotProps {
     Logo: string;
+    Title: string;
     IconStyle?: {
         ShadowColor?: string;
     }
@@ -15,6 +16,7 @@ interface PortableChatBotProps {
         ButtonTextColor?: string;
         InputBackgroundColor?: string;
         InputTextColor?: string;
+        MessageBoxBackground?: string;
         UserMessageBackgroundColor?: string;
         UserMessageTextColor?: string;
         BotMessageBackgroundColor?: string;
@@ -27,7 +29,7 @@ interface PortableChatBotProps {
     }
 }
 
-export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle, Style, DefaultMessage, Dictionary}) => {
+export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle, Style, DefaultMessage, Dictionary, Title}) => {
     
     const [isChatBoxVisible, setIsChatBoxVisible] = useState<boolean>(false);
     const [isGeneratingResponse, setIsGeneratingResponse] = useState<boolean>(false);
@@ -122,19 +124,33 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
                             className={style.chat_box_close_button} 
                             onClick={() => setIsChatBoxVisible(false)}
                         >✕</div>
+                        <div className={style.center}><b>{Title}</b></div>
                         <div className={style.chat_box_content}>
-                            <div className={style.message_box} ref={messageBoxRef}>
+                            <div 
+                                className={style.message_box} 
+                                ref={messageBoxRef}
+                                style={{
+                                    ...(Style?.MessageBoxBackground ? {background: Style.MessageBoxBackground} : undefined)
+                                }}
+                                >
                                 {conversation.map((item, index) => (
                                     index % 2 === 0 ? (
                                     <div 
+                                        className={style.mgb_bot_wrapper}
                                         key={index}
-                                        className={style.msg_bot}
-                                        style={{
-                                        ...(Style?.BotMessageBackgroundColor ? { backgroundColor: Style.BotMessageBackgroundColor } : {}),
-                                        ...(Style?.BotMessageTextColor ? { color: Style.BotMessageTextColor } : {}),
-                                        }}
-                                    >
-                                        <span dangerouslySetInnerHTML={{ __html: item}}/>
+                                        >
+                                        <div className={style.msg_bot_logo_wrapper}>
+                                            <img className={style.msg_bot_logo} src={Logo} />
+                                        </div>
+                                        <div 
+                                            className={style.msg_bot}
+                                            style={{
+                                            ...(Style?.BotMessageBackgroundColor ? { backgroundColor: Style.BotMessageBackgroundColor } : {}),
+                                            ...(Style?.BotMessageTextColor ? { color: Style.BotMessageTextColor } : {}),
+                                            }}
+                                        >
+                                            <span dangerouslySetInnerHTML={{ __html: item}}/>
+                                        </div>
                                     </div>
                                     ) : (
                                     <div 

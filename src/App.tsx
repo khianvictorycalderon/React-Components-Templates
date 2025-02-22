@@ -394,6 +394,7 @@ const App = () => {
         <>
             {/* Portable Chat Bot Usage */}
             <PortableChatBot
+                Title="Ask our AI assistant"
                 Dictionary={{
                     FullMatch: FullMatchDictionary,
                     PartialMatch: PartialMatchDictionary,
@@ -407,14 +408,15 @@ const App = () => {
                 Style={{
                     BackgroundColor: "rgb(76, 97, 102)",
                     TextColor: "rgb(229, 229, 229)",
-                    ButtonBackgroundColor: "rgb(47, 116, 255)",
-                    ButtonTextColor: "rgb(249, 248, 255)",
+                    ButtonBackgroundColor: "rgb(0, 114, 170)",
+                    ButtonTextColor: "rgb(24rgb(17, 154, 29)",
                     InputBackgroundColor: "rgb(240, 240, 240)",
                     InputTextColor: "rgb(0, 0, 0)",
                     BotMessageBackgroundColor: "rgb(43, 106, 148)",
                     BotMessageTextColor: "rgb(241, 235, 235)",
                     UserMessageBackgroundColor: "rgb(228, 228, 228)",
                     UserMessageTextColor: "rgb(0, 0, 0)",
+                    MessageBoxBackground: "rgb(53, 67, 71)"
                 }}
             />
 
