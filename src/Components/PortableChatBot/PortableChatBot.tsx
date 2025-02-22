@@ -72,16 +72,26 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isGeneratingResponse || !inputBox.trim()) return; // Ignore empty inputs
-
+    
+        if (inputBox.toLowerCase().trim() === "clear conversation") {
+            setConversation([]); // Clear the conversation
+            setHasBotResponded(true); // Mark as responded to avoid re-triggering useEffect
+            setInputBox(""); // Clear input field
+    
+            // Generate the DefaultMessage right after clearing
+            generateBotResponse(`${DefaultMessage}`);
+            return;
+        }
+    
         // Update conversation with user message
         setConversation((prev) => [...prev, inputBox]);
-
+    
         // Clear input field
-        setInputBox('');
-
+        setInputBox("");
+    
         // Append an empty string to prepare for animation
-        setConversation((prev) => [...prev, '']);
-
+        setConversation((prev) => [...prev, ""]);
+    
         // Simulate bot response
         generateBotResponse(Respond(inputBox, Dictionary.FullMatch, Dictionary.PartialMatch, Dictionary.Unknown));
     };
