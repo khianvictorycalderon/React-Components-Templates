@@ -8,11 +8,20 @@
     border-radius: 50%;
     object-fit: contain;
     cursor: pointer;
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    -moz-filter: drop-shadow(0px 0px 3px black);
+    -o-filter: drop-shadow(0px 0px 3px black);
     filter: drop-shadow(0px 0px 3px black);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
 .bot_icon:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
     transform: scale(1.2);
 }
 
@@ -42,7 +51,10 @@
     height: 60vh;
     width: 30vw;
     background: rgb(37, 37, 37);
-    color:white;
+    color: white;
+    -webkit-box-shadow: -2px -2px 15px black;
+    -moz-box-shadow: -2px -2px 15px black;
+    -o-box-shadow: -2px -2px 15px black;
     box-shadow: -2px -2px 15px black;
 }
 
@@ -51,14 +63,20 @@
     right: 1rem;
     cursor: pointer;
     z-index: 30;
-    transition: 0.3s;
     padding-right: 3%;
     font-size: 1.5rem;
     width: fit-content;
     justify-self: end;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .chat_box_close_button:hover {
+    -webkit-filter: drop-shadow(0px 0px 2px rgb(74, 201, 255));
+    -moz-filter: drop-shadow(0px 0px 2px rgb(74, 201, 255));
+    -o-filter: drop-shadow(0px 0px 2px rgb(74, 201, 255));
     filter: drop-shadow(0px 0px 2px rgb(74, 201, 255));
 }
 
@@ -75,11 +93,11 @@
 
 .form_box {
     display: flex;
-    width: 100%; /* Occupy full width */
+    width: 100%;
 }
 
 .input_box {
-    flex: 0 0 90%; /* Fixed 90% width */
+    flex: 0 0 90%;
     border: 1px solid #ccc;
     padding: 8px;
     box-sizing: border-box;
@@ -88,7 +106,7 @@
 }
 
 .send_button {
-    flex: 0 0 10%; /* Fixed 10% width */
+    flex: 0 0 10%;
     border: none;
     background-color: #007bff;
     color: white;
@@ -96,10 +114,16 @@
     padding: 8px;
     box-sizing: border-box;
     font-size: 1rem;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
 .send_button:hover {
+    -webkit-filter: brightness(1.1);
+    -moz-filter: brightness(1.1);
+    -o-filter: brightness(1.1);
     filter: brightness(1.1);
 }
 
@@ -110,10 +134,16 @@
     background-color: #007bff;
     color: white;
     padding: 2%;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
 .stop_generate_button:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -123,7 +153,7 @@
 
 .msg_bot {
     background-color: rgba(255, 255, 255, 0.087);
-    max-width:80%;
+    max-width: 80%;
     padding: 2%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -138,7 +168,7 @@
     padding: 2%;
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-right:2%;
+    margin-right: 2%;
     border-radius: 5px;
 }
 
@@ -153,7 +183,7 @@
         height: 12vw;
         width: 12vw;
         bottom: 0.5rem;
-        right: 0.5rem;    
+        right: 0.5rem;
     }
     .chat_box {
         width: 100%;
