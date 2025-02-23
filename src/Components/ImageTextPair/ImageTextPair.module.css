@@ -87,4 +87,12 @@
         margin-top: 4%;
         margin-bottom: 4%;
     }
+    .item_img_wrapper {
+        -webkit-align-content: start;
+        -ms-flex-line-pack: start;
+        align-content: start;
+    }
+    .item_content {
+        padding-left: 10%;
+    }
 }
