@@ -12,6 +12,7 @@ import { CenteredBoxBanner } from "./Components/CenteredBoxBanner/CenteredBoxBan
 import { FormInput } from "./Components/FormInput/FormInput";
 import { useState } from "react";
 import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
+import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
 
 const App = () => {
 
@@ -605,6 +606,102 @@ const App = () => {
                     Background: "rgb(34, 34, 34)",
                     TextColor: "rgb(249, 249, 249)"
                 }}
+            />
+
+            {/* ImageTextPair Usage */}
+            <ImageTextPair
+                Rows={2}
+                Style={{
+                    BackgroundColor: "rgb(85, 85, 85)",
+                    TextColor: "white"
+                }}
+                List={[
+                    {
+                        Image:"image/space.jpg",
+                        ImageHref: "https://khian.netlify.app",
+                        TargetHref: "_self",
+                        RoundedImage: false,
+                        Title:"Sample Title fasdoif asdiof jadosif japiodiaodps iojp jasiodfjaosdjfpo",
+                        Description: (
+                            <>
+                                ajfioasjfisajfoisdjfioadsjfpo
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/space.jpg",
+                        RoundedImage: false,
+                        Title:"Sample Title fasdoif asdiof jadosif japiodiaodps iojp jasiodfjaosdjfpo",
+                        Description: (
+                            <>
+                                <a href="https://khian.netlify.app/">This is a sample link text</a>
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/tiktok.pngs",
+                        Alt: "Tiktok Logo",
+                        RoundedImage: false,
+                        Title:"Sample Title",
+                        Description: (
+                            <>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/space.jpg",
+                        RoundedImage: true,
+                        Title:"Sample Title fasdoif asdiof jadosif japiodiaodps iojp jasiodfjaosdjfpo",
+                        Description: (
+                            <>
+                                ajfioasjfisajfoisdjfioadsjfpo
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/tiktok.png",
+                        RoundedImage: false,
+                        Title:"Sample Title",
+                        Description: (
+                            <>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/space.jpg",
+                        RoundedImage: false,
+                        Title:"Sample Title fasdoif asdiof jadosif japiodiaodps iojp jasiodfjaosdjfpo",
+                        Description: (
+                            <>
+                                ajfioasjfisajfoisdjfioadsjfpo
+                            </>
+                        )
+                    },
+                    {
+                        Image:"image/tiktok.png",
+                        RoundedImage: false,
+                        Title:"Sample Title",
+                        Description: (
+                            <>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                                samdgkl<br/>
+                            </>
+                        )
+                    },
+                ]}
             />
 
             {/* Banner Usage (Multiple Banner for Multiple Images) */}
