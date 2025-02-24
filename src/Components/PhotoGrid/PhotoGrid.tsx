@@ -5,7 +5,7 @@ interface PhotoGridProps {
     Images: {
         Image: string;
         Alt: string;
-        Onclick: () => void;
+        OnClick: () => void;
     }[];
 }
 
@@ -26,7 +26,7 @@ export const PhotoGrid = ({Background, Images}: PhotoGridProps) => {
                         alt={item.Alt}
                         title={item.Alt}
                         className={style.photo}
-                        onClick={item.Onclick}
+                        onClick={item.OnClick}
                         src={item.Image} 
                     />
                 </div>

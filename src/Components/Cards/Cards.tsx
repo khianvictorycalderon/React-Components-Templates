@@ -5,7 +5,7 @@ interface CardProps {
         ImagePath?: string;
         Title: string;
         Description: string;
-        Onclick: () => void;
+        OnClick: () => void;
     }[];
     Style?:{
         SectionBackground?: string;
@@ -27,7 +27,7 @@ export const Cards = ({Cards, Style}: CardProps) => {
                     <div 
                         className={style.card} 
                         key={item.Title + index}
-                        onClick={item.Onclick}
+                        onClick={item.OnClick}
                         style={{
                             ...(Style?.CardsBackground ? {background: Style.CardsBackground} : undefined),
                             ...(Style?.CardsTextColor ? {color: Style.CardsTextColor} : undefined),
