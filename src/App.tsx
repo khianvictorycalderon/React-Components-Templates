@@ -457,7 +457,8 @@ const App = () => {
                 Style={{
                     BackgroundImage:"image/space.jpg",
                     ButtonBackground: "rgb(25, 60, 216)",
-                    ButtonTextColor: "rgb(255, 255, 255)"
+                    ButtonTextColor: "rgb(255, 255, 255)",
+                    FixedBackgroundPosition: true
                 }}
                 // RoundedLogo={true} // Optional for rounded logo, by default it is false
                 // HasDarkCover={false} // Optional for Background if it is solid color

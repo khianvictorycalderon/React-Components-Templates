@@ -12,17 +12,23 @@ interface HeroProps {
         BackgroundImage?: string;
         ButtonBackground?: string;
         ButtonTextColor?: string;
+        FixedBackgroundPosition: boolean;
     }
 }
 
 export const Hero = ({RoundedLogo=false, HasDarkCover=true, Style, Title, Description, ButtonLabel, ButtonOnClick, Logo}: HeroProps) => {
     return (
         <header 
-            style={Style?.BackgroundImage ? {backgroundImage: `url('${Style.BackgroundImage}')`, backgroundAttachment: "fixed", backgroundPosition: "center", backgroundSize: "cover" } : undefined}
+            style={{
+                ...(Style?.BackgroundImage ? {backgroundImage: `url('${Style.BackgroundImage}')`, backgroundAttachment: "fixed", backgroundPosition: "center", backgroundSize: "cover" } : undefined),
+                ...(Style?.FixedBackgroundPosition ? {backgroundAttachment: "fixed"} : {backgroundAttachment: "initial"})
+            }}
             className={style.hero}
             >
             <div 
-                style={HasDarkCover ? {background: "rgba(0, 0, 0, 0.535)"} : undefined}
+                style={{
+                    ...(HasDarkCover ? {background: "rgba(0, 0, 0, 0.535)"} : undefined),
+                }}
                 className={style.content}>
                 <div className={`${style.logo_container} ${style.content_box}`}>
                     <img
