@@ -8,10 +8,10 @@
     border-radius: 50%;
     object-fit: contain;
     cursor: pointer;
-    -webkit-filter: drop-shadow(0px 0px 3px black);
-    -moz-filter: drop-shadow(0px 0px 3px black);
-    -o-filter: drop-shadow(0px 0px 3px black);
-    filter: drop-shadow(0px 0px 3px black);
+    -webkit-filter: drop-shadow(0px 0px 5px black);
+    -moz-filter: drop-shadow(0px 0px 5px black);
+    -o-filter: drop-shadow(0px 0px 5px black);
+    filter: drop-shadow(0px 0px 5px black);
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
