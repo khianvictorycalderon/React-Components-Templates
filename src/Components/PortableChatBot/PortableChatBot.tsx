@@ -23,6 +23,7 @@ interface PortableChatBotProps {
         BotMessageTextColor?: string;
     }
     Dictionary: {
+        PartialMatchWithCommand?: Record<string, any>;
         FullMatch: string;
         PartialMatch: string;
         Unknown: string;
@@ -93,7 +94,7 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
         setConversation((prev) => [...prev, ""]);
     
         // Simulate bot response
-        generateBotResponse(Respond(inputBox, Dictionary.FullMatch, Dictionary.PartialMatch, Dictionary.Unknown));
+        generateBotResponse(Respond(inputBox, Dictionary.PartialMatchWithCommand || {}, Dictionary.FullMatch, Dictionary.PartialMatch, Dictionary.Unknown));
     };
 
      // When chat box is opened, generate default message and bot response (once)

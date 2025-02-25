@@ -367,6 +367,11 @@ const App = () => {
     }
 
     // Dictionary List:
+    const PartialMatchDictionaryWithCommand = {
+        "close,this,window=:=Sure, closing in a few seconds...": () => setTimeout(() => window.close(), 1000),
+        "alert,me=:=Okay, the alert message will be shown shortly...": () => setTimeout(() => alert("This is a sample alert message"), 1000),
+        "open|visit|go to,khian,website=:=Opening...<or>Opening Khian's website...<or>Sure, please wait...": () => setTimeout(() => window.open("https://khian.netlify.app/", "_blank"), 1000),
+    }
     const FullMatchDictionary = `
         what are you=:=
             I am a chat bot ready to assist you.
@@ -399,7 +404,8 @@ const App = () => {
                 Dictionary={{
                     FullMatch: FullMatchDictionary,
                     PartialMatch: PartialMatchDictionary,
-                    Unknown: UnknownFallBack
+                    Unknown: UnknownFallBack,
+                    PartialMatchWithCommand: PartialMatchDictionaryWithCommand
                 }}
                 Logo="image/kvbot.png"
                 IconStyle={{

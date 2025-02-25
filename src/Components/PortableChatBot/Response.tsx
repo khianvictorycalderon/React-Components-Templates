@@ -1,5 +1,8 @@
 export const Respond = (
     input: string,
+    PartialMatchDictionaryWithCommand: Record<string, any> = {
+        "close,this,window=:=Sure, closing the window now...": () => setTimeout(() => window.close(), 200)
+    },
     FullMatchDictionary: string = `
         hi/hello/hi./hello./hi there/hi there./hello there/hello there.=:=
             Hi there, what brings you here today?<or>Hello, what can I do for you?<or>Hi there, how can I help you?
@@ -115,9 +118,39 @@ export const Respond = (
         return null; // No match found
     }
 
+    // Function to parse PartialMatchDictionaryWithCommand
+    function searchPreDefinedMatchesWithCommand(dictionary: Record<string, any>): string | null {
+        for (let key in dictionary) {
+            let [patterns, responses] = key.split(universalPartialMatcher);
+            let patternSets = patterns.split('/');
+            let responseText = responses.trim();
+            let action = dictionary[key]; // Retrieve the associated function if it exists
+
+            let match = patternSets.some(set => {
+                let patterns = set.split(',');
+                return patterns.every(pattern => {
+                    let alternatives = pattern.split('|');
+                    return alternatives.some(alternative => normalizedInput.includes(alternative));
+                });
+            });
+
+            if (match) {
+                if (typeof action === "function") {
+                    action(); // Execute the function
+                }
+                return responseText; // Return the associated text response
+            }
+        }
+        return null; // No match found
+    }
+
     // Try to get an exact match response first
     const exactMatchResponse: string | null = getExactMatchResponse(exactMatchInput);
     if (exactMatchResponse) return exactMatchResponse;
+
+    // Try command-based partial match
+    const commandMatchResponse: string | null = searchPreDefinedMatchesWithCommand(PartialMatchDictionaryWithCommand);
+    if (commandMatchResponse) return commandMatchResponse;
 
     // Try partial match if no exact match is found
     const partialMatchResponse: string | null = searchPreDefinedMatches(PartialMatchDictionary);
