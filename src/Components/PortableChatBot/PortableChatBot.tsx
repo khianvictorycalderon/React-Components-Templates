@@ -49,17 +49,16 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
         let response = "";
         let index = 0;
     
-        responseInterval.current = window.setInterval(() => {
+        const responseInterval = setInterval(() => {
             if (index < message.length) {
                 response += message[index];
-                setConversation((prev) => [...prev.slice(0, -1), response]); // Update last message
+                setConversation((prev) => [...prev.slice(0, -1), response]); // Update the last message with the bot's response
                 index++;
             } else {
-                clearInterval(responseInterval.current!);
-                responseInterval.current = null;
-                setIsGeneratingResponse(false);
+                clearInterval(responseInterval);
+                setIsGeneratingResponse(false); // Stop generating after completion
             }
-        }, 1); // Adjust speed as needed
+        }, 1); // Adjust speed for typing effect
     };
 
     const stopGenerating = () => {
@@ -70,31 +69,34 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
         }
     };
 
+    
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (isGeneratingResponse || !inputBox.trim()) return; // Ignore empty inputs
-    
-        if (inputBox.toLowerCase().trim() === "clear conversation") {
-            setConversation([]); // Clear the conversation
-            setHasBotResponded(true); // Mark as responded to avoid re-triggering useEffect
-            setInputBox(""); // Clear input field
-    
-            // Generate the DefaultMessage right after clearing
-            generateBotResponse(`${DefaultMessage}`);
-            return;
+        e.preventDefault(); // Prevent page reload
+
+        if (isGeneratingResponse || inputBox.trim() === "") {
+            return; // Ignore empty inputs or when response is being generated
         }
-    
-        // Update conversation with user message
+
+        // Step 1: Append user message to conversation
         setConversation((prev) => [...prev, inputBox]);
-    
+
         // Clear input field
         setInputBox("");
-    
-        // Append an empty string to prepare for animation
+
+        // Step 2: Add an empty string for the bot's response placeholder
         setConversation((prev) => [...prev, ""]);
-    
-        // Simulate bot response
-        generateBotResponse(Respond(inputBox, Dictionary.PartialMatchWithCommand || {}, Dictionary.FullMatch, Dictionary.PartialMatch, Dictionary.Unknown));
+
+        // Step 3: Generate bot response using the user input and conversation history
+        const botResponse = Respond(
+            [...conversation, inputBox], // Include the latest user message in conversation history
+            Dictionary.PartialMatchWithCommand || {},
+            Dictionary.FullMatch,
+            Dictionary.PartialMatch,
+            Dictionary.Unknown
+        );
+
+        // Step 4: Call the function to generate the bot's response with typing effect
+        generateBotResponse(botResponse);
     };
 
      // When chat box is opened, generate default message and bot response (once)

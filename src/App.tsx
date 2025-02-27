@@ -389,6 +389,8 @@ const App = () => {
         <and>hello|hi=:=
             Hi there, how are you?
             <or>Hello there too, how can I help you?
+        <and>a,bot^what,kind=:=A kind enough to you.
+        <and>very,long,message=:=Sure, here is a very long message. JSAIFSAIOFJSAIFJDSOJGADSODSJFOSDJFOADSJFOADSJFOADSJFADSFOADJFPADSJFAPSDFOKADJSFPOAJSD FMPVOADJSFPADSFJ KVADSPFKVJADSFPVAS DKFVPASDKFJVASD PFVJASPDFVKASDPFVJASDPOFJASDVPF
     `;
     const UnknownFallBack = `
         Sorry but i cannot understand you, this is a very long response design to test the stop generation.,.

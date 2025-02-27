@@ -28,15 +28,19 @@
 .mgb_bot_wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center; /* Ensures vertical alignment of logo and message */
 }
 
 .msg_bot_logo_wrapper {
     flex: 0 0 10%;
     margin-right: 2%;
+    justify-content: center;
+    display: flex; /* Centers logo horizontally */
+    align-self: flex-end;
+    margin-bottom: 2%;
 }
 
 .msg_bot_logo {
-    flex: 0 0 90%;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -159,6 +163,7 @@
     margin-bottom: 2%;
     width: fit-content;
     border-radius: 5px;
+    word-break: break-word;
 }
 
 .msg_user {
