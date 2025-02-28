@@ -380,21 +380,34 @@ const App = () => {
             <or>Fine, thanks for asking.
     `;
     const PartialMatchDictionary = `
-        which|what,model,you=:=
-            I do not use any kind of <b>model</b> as I am trained from scratch.
-            <or>I do not use any <u>AI model</u> as I am manually trained from scratch.
+        which|what,model,you^i,not,use,model^sure|ceratin|really=:=
+            Yes, I am chatbot trained from scratch and also can manually be trained by anyone.<or>
+            Yeah, I am a chatbot trained from scratch. I have the capability to respond immediately.
+        <and>is,there,i,can,help|assist^yes|yeah|yep=:=
+            Okay then, what else can I assist you?<or>
+            Sure, let me know about that.
+        <and>a,bot^what,kind=:=
+            A kind enough to you.
+        <and>which|what,model,you=:=
+            I do not use any kind of <b>model</b> as I am trained from scratch.<or>
+            I do not use any <u>AI model</u> as I am manually trained from scratch.
         <and>what,your,name=:=
-            My name is KVBot, ready to assist you.
-            <or>I'm KVBot.
+            My name is KVBot, ready to assist you.<or>
+            I'm KVBot.
         <and>hello|hi=:=
-            Hi there, how are you?
-            <or>Hello there too, how can I help you?
-        <and>a,bot^what,kind=:=A kind enough to you.
-        <and>very,long,message=:=Sure, here is a very long message. JSAIFSAIOFJSAIFJDSOJGADSODSJFOSDJFOADSJFOADSJFOADSJFADSFOADJFPADSJFAPSDFOKADJSFPOAJSD FMPVOADJSFPADSFJ KVADSPFKVJADSFPVAS DKFVPASDKFJVASD PFVJASPDFVKASDPFVJASDPOFJASDVPF
+            Hi there, how are you?<or>
+            Hello there too, how can I help you?
+        <and>what,are,you/define,yourself=:=
+            I am KVBot, a chatbot willing to assist you to anything you need.
+        <and>very,long,message=:=
+            Sure, here is a very long message. JSAIFSAIOFJSAIFJDSOJGADSODSJFOSDJFOADSJFOADSJFOADSJFADSFOADJFPADSJFAPSDFOKADJSFPOAJSD FMPVOADJSFPADSFJ KVADSPFKVJADSFPVAS DKFVPASDKFJVASD PFVJASPDFVKASDPFVJASDPOFJASDVPF
+        <and>ok,then=:=
+            Glad to help, is there anything I can assist you?<or>
+            Appreciate it, is there anything I can help you?
     `;
     const UnknownFallBack = `
-        Sorry but i cannot understand you, this is a very long response design to test the stop generation.,.
-        Apologies but i don't understand you, this is a very long response design to test the stop generation.,.
+        Sorry but I cannot understand you, this is a very long response design to test the stop generation.,.
+        Apologies but I don't understand you, this is a very long response design to test the stop generation.,.
         My bad, I don't know what you are saying, this is a very long response design to test the stop generation
     `;
 

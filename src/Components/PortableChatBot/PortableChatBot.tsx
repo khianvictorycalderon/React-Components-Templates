@@ -49,17 +49,21 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle
         let response = "";
         let index = 0;
     
-        const responseInterval = setInterval(() => {
+        responseInterval.current = window.setInterval(() => { // Store interval reference
             if (index < message.length) {
                 response += message[index];
-                setConversation((prev) => [...prev.slice(0, -1), response]); // Update the last message with the bot's response
+                setConversation((prev) => [...prev.slice(0, -1), response]);
                 index++;
             } else {
-                clearInterval(responseInterval);
-                setIsGeneratingResponse(false); // Stop generating after completion
+                if (responseInterval.current !== null) {
+                    clearInterval(responseInterval.current);
+                    responseInterval.current = null;
+                }
+                setIsGeneratingResponse(false);
             }
-        }, 1); // Adjust speed for typing effect
+        }, 1);
     };
+    
 
     const stopGenerating = () => {
         if (responseInterval.current !== null) {
