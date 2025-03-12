@@ -6,7 +6,6 @@
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    margin: 6% 2% 1% 2%;
 }
 
 .submit:hover {
@@ -140,6 +139,14 @@
 
 .input_box input[type="checkbox"]:hover {
     transform: scale(1.1);
+}
+
+.alert_danger {
+    color: #842029; /* Dark red text */
+    background-color: #f8d7da; /* Light red background */
+    border-color: #f5c2c7; /* Soft red border */
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {

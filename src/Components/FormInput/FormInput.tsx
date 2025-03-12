@@ -16,6 +16,7 @@ interface FormInputProps {
         Options?: { label: string; value: string }[];
         Name?: string;
     }[];
+    ErrorMessage?: string;
     Style?: {
         Rows?: number;
         TextColor?: string;
@@ -27,7 +28,7 @@ interface FormInputProps {
     SubmitLabel?: string;
 }
 
-export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, SubmitLabel }) => (
+export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, SubmitLabel, ErrorMessage }) => (
     <form
         style={{
             color: Style?.TextColor || "inherit",
@@ -109,6 +110,14 @@ export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, Su
                 );
             })}
         </div>
+        <br/>
+
+        {ErrorMessage && (
+            <>
+                <div className={style.alert_danger}>{ErrorMessage}</div>
+                <br/>
+            </>
+        )}
 
         <div className={style.center}>
             <input className={style.submit} type="submit" value={SubmitLabel || "Submit"} />
