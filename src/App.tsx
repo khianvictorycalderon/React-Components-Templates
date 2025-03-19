@@ -422,7 +422,6 @@ const App = () => {
                     Unknown: UnknownFallBack,
                     PartialMatchWithCommand: PartialMatchDictionaryWithCommand
                 }}
-                Logo="image/kvbot.png"
                 IconStyle={{
                     ShadowColor: "black"
                 }}

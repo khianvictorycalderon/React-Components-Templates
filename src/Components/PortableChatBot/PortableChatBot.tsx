@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import style from './PortableChatBot.module.css'
 import { Respond } from './Response';
+import { Logo } from './Logo';
 
 interface PortableChatBotProps {
-    Logo: string;
     Title: string;
     IconStyle?: {
         ShadowColor?: string;
@@ -30,7 +30,7 @@ interface PortableChatBotProps {
     }
 }
 
-export const PortableChatBot: React.FC<PortableChatBotProps> = ({Logo, IconStyle, Style, DefaultMessage, Dictionary, Title}) => {
+export const PortableChatBot: React.FC<PortableChatBotProps> = ({IconStyle, Style, DefaultMessage, Dictionary, Title}) => {
     
     const [isChatBoxVisible, setIsChatBoxVisible] = useState<boolean>(false);
     const [isGeneratingResponse, setIsGeneratingResponse] = useState<boolean>(false);
