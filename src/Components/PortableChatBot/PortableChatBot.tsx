@@ -28,9 +28,20 @@ interface PortableChatBotProps {
         PartialMatch: string;
         Unknown: string;
     }
+    Data?: {
+        UserInput: React.Dispatch<React.SetStateAction<string>>;
+        BotResponse: React.Dispatch<React.SetStateAction<string>>;
+    };    
 }
 
-export const PortableChatBot: React.FC<PortableChatBotProps> = ({IconStyle, Style, DefaultMessage, Dictionary, Title}) => {
+export const PortableChatBot: React.FC<PortableChatBotProps> = ({
+    IconStyle,
+    Style,
+    DefaultMessage,
+    Dictionary,
+    Title,
+    Data // <-- make sure this is destructured!
+}) => {
     
     const [isChatBoxVisible, setIsChatBoxVisible] = useState<boolean>(false);
     const [isGeneratingResponse, setIsGeneratingResponse] = useState<boolean>(false);
@@ -46,62 +57,56 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({IconStyle, Styl
 
     const generateBotResponse = (message: string) => {
         setIsGeneratingResponse(true);
+        
+        // ✅ Notify App.tsx IMMEDIATELY with the correct full bot response
+        if (typeof Data?.BotResponse === "function") {
+            Data.BotResponse(message);
+        }
+    
         let response = "";
         let index = 0;
     
-        responseInterval.current = window.setInterval(() => { // Store interval reference
+        responseInterval.current = window.setInterval(() => {
             if (index < message.length) {
                 response += message[index];
                 setConversation((prev) => [...prev.slice(0, -1), response]);
                 index++;
             } else {
-                if (responseInterval.current !== null) {
-                    clearInterval(responseInterval.current);
-                    responseInterval.current = null;
-                }
+                clearInterval(responseInterval.current!);
+                responseInterval.current = null;
                 setIsGeneratingResponse(false);
             }
         }, 1);
-    };
-    
-
-    const stopGenerating = () => {
-        if (responseInterval.current !== null) {
-            clearInterval(responseInterval.current);
-            responseInterval.current = null;
-            setIsGeneratingResponse(false);
-        }
-    };
-
+    };      
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); // Prevent page reload
-
-        if (isGeneratingResponse || inputBox.trim() === "") {
-            return; // Ignore empty inputs or when response is being generated
+        e.preventDefault();
+        if (isGeneratingResponse || inputBox.trim() === "") return;
+    
+        const userMessage = inputBox.trim();
+        
+        // Notify App.tsx immediately with the user input
+        if (typeof Data?.UserInput === "function") {
+            Data.UserInput(userMessage);
         }
-
-        // Step 1: Append user message to conversation
-        setConversation((prev) => [...prev, inputBox]);
-
-        // Clear input field
+    
+        const updatedConversation = [...conversation, userMessage];
+    
+        setConversation([...updatedConversation, ""]); // Reserve space for bot reply
         setInputBox("");
-
-        // Step 2: Add an empty string for the bot's response placeholder
-        setConversation((prev) => [...prev, ""]);
-
-        // Step 3: Generate bot response using the user input and conversation history
+    
         const botResponse = Respond(
-            [...conversation, inputBox], // Include the latest user message in conversation history
+            updatedConversation, // pass correct conversation history!
             Dictionary.PartialMatchWithCommand || {},
             Dictionary.FullMatch,
             Dictionary.PartialMatch,
             Dictionary.Unknown
         );
-
-        // Step 4: Call the function to generate the bot's response with typing effect
+    
         generateBotResponse(botResponse);
     };
+    
+     
 
      // When chat box is opened, generate default message and bot response (once)
      useEffect(() => {
@@ -110,6 +115,15 @@ export const PortableChatBot: React.FC<PortableChatBotProps> = ({IconStyle, Styl
             generateBotResponse(`${DefaultMessage}`)
         }
     }, [isChatBoxVisible]);
+
+    // Stop button generation
+    const stopGenerating = () => {
+        if (responseInterval.current !== null) {
+            clearInterval(responseInterval.current);
+            responseInterval.current = null;
+            setIsGeneratingResponse(false);
+        }
+    };
     
     // Scroll during message generation
     const messageBoxRef = useRef<HTMLDivElement | null>(null);

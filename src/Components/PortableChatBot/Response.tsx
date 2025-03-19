@@ -110,35 +110,29 @@ export const Respond = (
 
     // Function to check command-based matches
     function searchPreDefinedMatchesWithCommand(dictionary: Record<string, any>, normalizedInput: string): string | null {
-        // Iterate over the dictionary to find a match
         for (let key in dictionary) {
-            // Split the key into patterns and responses
             let [patterns, responses] = key.split(universalPartialMatcher);
             let patternSets = patterns.split('/');
-            let responseText = responses.trim();
-            let action = dictionary[key]; // Retrieve the associated function if it exists
-    
-            // Check if any of the pattern sets match the input
+            let responseOptions = responses.split('<or>').map(r => r.trim());
+            let action = dictionary[key];
+            
             let match = patternSets.some(set => {
-                let patterns = set.split(','); // Split patterns by comma
+                let patterns = set.split(',');
                 return patterns.every(pattern => {
-                    let alternatives = pattern.split('|'); // Split alternatives by pipe (|)
-                    return alternatives.some(alternative => normalizedInput.includes(alternative)); // Match alternatives
+                    let alternatives = pattern.split('|');
+                    return alternatives.some(alternative => normalizedInput.includes(alternative));
                 });
             });
     
-            // If a match is found, execute the action and return the response
             if (match) {
                 if (typeof action === "function") {
-                    action(); // Execute the associated function
+                    action();
                 }
-                return responseText; // Return the response associated with the match
+                return getRandomResponse(responseOptions);
             }
         }
-        
-        // Return null if no match is found
         return null;
-    }
+    }    
     
 
     // Try to get an exact match response first

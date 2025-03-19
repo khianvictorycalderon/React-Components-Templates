@@ -10,7 +10,7 @@ import { TextGrid } from "./Components/TextGrid/TextGrid";
 import { TextSection } from "./Components/TextSection/TextSection";
 import { CenteredBoxBanner } from "./Components/CenteredBoxBanner/CenteredBoxBanner";
 import { FormInput } from "./Components/FormInput/FormInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
 import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
 
@@ -411,6 +411,15 @@ const App = () => {
         My bad, I don't know what you are saying, this is a very long response design to test the stop generation
     `;
 
+    // Recording user and bot conversation ------------------------------------------------
+    const [enteredUserInput, setEnteredUserInput] = useState<string>("");;
+    const [botLatestResponse, setBotLatestResponse] = useState<string>("");
+
+    useEffect(() => {
+        console.log(`User: ${enteredUserInput}`);
+        console.log(`Bot: ${botLatestResponse}`);
+    },[enteredUserInput]);
+
     return (
         <>
             {/* Portable Chat Bot Usage */}
@@ -438,6 +447,10 @@ const App = () => {
                     UserMessageBackgroundColor: "rgb(228, 228, 228)",
                     UserMessageTextColor: "rgb(0, 0, 0)",
                     MessageBoxBackground: "rgb(53, 67, 71)"
+                }}
+                Data={{
+                    UserInput: setEnteredUserInput,
+                    BotResponse: setBotLatestResponse
                 }}
             />
 

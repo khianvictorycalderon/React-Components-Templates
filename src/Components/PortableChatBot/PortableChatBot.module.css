@@ -56,10 +56,10 @@
     width: 30vw;
     background: rgb(37, 37, 37);
     color: white;
-    -webkit-box-shadow: -2px -2px 3px black;
-    -moz-box-shadow: -2px -2px 3px black;
-    -o-box-shadow: -2px -2px 3px black;
-    box-shadow: -2px -2px 3px black;
+    -webkit-box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: -2px -2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .chat_box_close_button {
