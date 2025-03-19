@@ -58,15 +58,12 @@ function searchPreDefinedMatches(
 // Main response function
 export const Respond = (
     convoHistory: string[],
-    PartialMatchDictionaryWithCommand: Record<string, any> = {
-        "close,this,window=:=Sure, closing the window now...": () => setTimeout(() => window.close(), 200)
-    },
+    PartialMatchDictionaryWithCommand: Record<string, any>,
     FullMatchDictionary: string = `...`, // Full match dictionary content
     PartialMatchDictionary: string = `...`, // Partial match dictionary content
     UnknownResponse: string = `...` // Unknown response content
 ): string => {
     let input = convoHistory[convoHistory.length - 1];
-    let normalizedInput: string = input.replace(/[^a-zA-Z0-9\s]/g, '').toLowerCase().trim();
 
     // Constants
     const universalSplitter: string = ".,.";
@@ -109,38 +106,52 @@ export const Respond = (
     };
 
     // Function to check command-based matches
-    function searchPreDefinedMatchesWithCommand(dictionary: Record<string, any>, normalizedInput: string): string | null {
+    function searchPreDefinedMatchesWithCommand(
+        conversationHistory: string[],
+        dictionary: Record<string, any>
+    ): string | null {
+        const normalizedHistory = conversationHistory.map(input =>
+            input.toLowerCase().trim()
+        );
+    
         for (let key in dictionary) {
-            let [patterns, responses] = key.split(universalPartialMatcher);
-            let patternSets = patterns.split('/');
-            let responseOptions = responses.split('<or>').map(r => r.trim());
-            let action = dictionary[key];
-            
-            let match = patternSets.some(set => {
-                let patterns = set.split(',');
-                return patterns.every(pattern => {
-                    let alternatives = pattern.split('|');
-                    return alternatives.some(alternative => normalizedInput.includes(alternative));
+            let [patterns, responses] = key.split("=:=");
+            if (!responses) continue;
+        
+            let patternSets = patterns.split("^"); // multi-turn split
+            let requiredTurns = patternSets.length;
+            if (requiredTurns > normalizedHistory.length) continue;
+        
+            let match = patternSets.every((patternSet, idx) => {
+                let turn = normalizedHistory[normalizedHistory.length - requiredTurns + idx];
+                let orSets = patternSet.split('/');
+        
+                return orSets.some(set => {
+                    let wordGroups = set.split(',').map(wordGroup => wordGroup.trim());
+                    return wordGroups.every(wordGroup => {
+                        let alternatives = wordGroup.split('|').map(w => w.trim());
+                        return alternatives.some(alt => turn.includes(alt));
+                    });
                 });
             });
-    
+        
             if (match) {
-                if (typeof action === "function") {
-                    action();
-                }
+                let responseOptions = responses.split('<or>').map(r => r.trim());
+                let action = dictionary[key];
+                if (typeof action === "function") action();
                 return getRandomResponse(responseOptions);
             }
-        }
-        return null;
-    }    
+        }        
     
+        return null;
+    }      
 
     // Try to get an exact match response first
     const exactMatchResponse: string | null = getExactMatchResponse(exactMatchInput);
     if (exactMatchResponse) return exactMatchResponse;
 
     // Try command-based partial match
-    const commandMatchResponse: string | null = searchPreDefinedMatchesWithCommand(PartialMatchDictionaryWithCommand, normalizedInput);
+    const commandMatchResponse: string | null = searchPreDefinedMatchesWithCommand(convoHistory, PartialMatchDictionaryWithCommand);
     if (commandMatchResponse) return commandMatchResponse;
 
     // Try partial match if no exact match is found

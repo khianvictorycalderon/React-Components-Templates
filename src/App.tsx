@@ -371,6 +371,7 @@ const App = () => {
         "close,this,window=:=Sure, closing in a few seconds...": () => setTimeout(() => window.close(), 1000),
         "alert,me=:=Okay, the alert message will be shown shortly...": () => setTimeout(() => alert("This is a sample alert message"), 1000),
         "open|visit|go to,khian,website=:=Opening...<or>Opening Khian's website...<or>Sure, please wait...": () => setTimeout(() => window.open("https://khian.netlify.app/", "_blank"), 1000),
+        "khian^open,his,website=:=Sure, openning his website...": () => setTimeout(() => window.open("https://khian.netlify.app/", "_blank"), 1000),
     }
     const FullMatchDictionary = `
         what are you=:=
@@ -386,6 +387,8 @@ const App = () => {
         <and>is,there,i,can,help|assist^yes|yeah|yep=:=
             Okay then, what else can I assist you?<or>
             Sure, let me know about that.
+        <and>who,khian=:=
+            Khian is a person.
         <and>a,bot^what,kind=:=
             A kind enough to you.
         <and>which|what,model,you=:=
