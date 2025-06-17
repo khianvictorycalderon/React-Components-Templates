@@ -16,7 +16,10 @@ interface FormInputProps {
         Options?: { label: string; value: string }[];
         Name?: string;
     }[];
-    ErrorMessage?: string;
+    FeedbackMessage?: {
+        type: "error" | "warning" | "success";
+        message: string;
+    } | null;
     Style?: {
         Rows?: number;
         TextColor?: string;
@@ -28,7 +31,7 @@ interface FormInputProps {
     SubmitLabel?: string;
 }
 
-export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, SubmitLabel, ErrorMessage }) => (
+export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, SubmitLabel, FeedbackMessage }) => (
     <form
         style={{
             color: Style?.TextColor || "inherit",
@@ -112,10 +115,16 @@ export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, Su
         </div>
         <br/>
 
-        {ErrorMessage && (
+        {FeedbackMessage && (
             <>
-                <div className={style.alert_danger}>{ErrorMessage}</div>
-                <br/>
+                <div
+                    className={`${style.FeedbackMessage} ${
+                        style[`alert_${FeedbackMessage.type === "error" ? "danger" : FeedbackMessage.type}`]
+                    }`}
+                >
+                    {FeedbackMessage.message}
+                </div>
+                <br />
             </>
         )}
 

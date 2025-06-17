@@ -360,11 +360,57 @@ const App = () => {
     const [gender, setGender] = useState<string>("");
     const [hobbies, setHobbies] = useState<string[]>([]);
     const [country, setCountry] = useState<string>("");
+    const [feedback, setFeedback] = useState<{type: "error" | "warning" | "success", message: string} | null>();
 
     const FormSubmitted = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        alert(`Username: ${username}\nEmail: ${email}\nAge: ${age}\nBirthdate: ${birthdate}\nGender: ${gender}\nCountry: ${country}\nHobbies: \n${hobbies}`);
+    e.preventDefault();
+
+    // Error: Required fields check
+    if (!username || !email || !birthdate || !gender || !country || hobbies.length === 0) {
+        setFeedback({
+            type: "error",
+            message: "Please fill in all required fields."
+        });
+        return;
     }
+
+    // Error: Email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        setFeedback({
+            type: "error",
+            message: "Invalid email format."
+        });
+        return;
+    }
+
+    // Warning: Age is 0 or unrealistic
+    if (age <= 0 || age > 120) {
+        setFeedback({
+            type: "warning",
+            message: "Please enter a realistic age."
+        });
+        return;
+    }
+
+    // Success: All validations passed
+    setFeedback({
+        type: "success",
+        message: "Form submitted successfully!"
+    });
+
+    alert(`
+            Username: ${username}
+            Email: ${email}
+            Age: ${age}
+            Birthdate: ${birthdate}
+            Gender: ${gender}
+            Country: ${country}
+            Hobbies: 
+            ${hobbies.join(", ")}`
+        );
+    };
+
 
     // Dictionary List:
     const PartialMatchDictionaryWithCommand = {
@@ -599,6 +645,7 @@ const App = () => {
                                     IsRequired: false,
                                 },                                                                      
                             ]}
+                            FeedbackMessage={feedback}
                             OnSubmit={(e) => FormSubmitted(e)}
                             SubmitLabel="Custom Submit Message"
                             Style={{

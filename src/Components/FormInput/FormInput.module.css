@@ -149,6 +149,22 @@
     border-radius: 8px;
 }
 
+.alert_warning {
+    color: #664d03; /* Dark yellow/brown text */
+    background-color: #fff3cd; /* Light yellow background */
+    border-color: #ffecb5; /* Soft yellow border */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.alert_success {
+    color: #0f5132; /* Dark green text */
+    background-color: #d1e7dd; /* Light green background */
+    border-color: #badbcc; /* Soft green border */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
     .inputs {
         grid-template-columns: 1fr !important;
