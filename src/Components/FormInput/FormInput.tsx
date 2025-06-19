@@ -26,6 +26,8 @@ interface FormInputProps {
         BackgroundColor?: string;
         InputTextColor?: string;
         InputBackgroundColor?: string;
+        ButtonButtonBackground?: string;
+        ButtonTextColor?: string;
     };
     OnSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
     SubmitLabel?: string;
@@ -129,7 +131,12 @@ export const FormInput: React.FC<FormInputProps> = ({ Input, Style, OnSubmit, Su
         )}
 
         <div className={style.center}>
-            <input className={style.submit} type="submit" value={SubmitLabel || "Submit"} />
+            <input className={style.submit} 
+            style={{
+                backgroundColor: Style?.ButtonButtonBackground || "rgb(20, 152, 247)", 
+                color: Style?.ButtonTextColor || "white"
+            }} 
+            type="submit" value={SubmitLabel || "Submit"} />
         </div>
     </form>
 );

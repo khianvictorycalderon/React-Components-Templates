@@ -654,6 +654,8 @@ const App = () => {
                                 BackgroundColor: "rgba(255, 255, 255, 0)",
                                 InputTextColor: "rgb(36, 36, 36)",
                                 InputBackgroundColor: "rgb(254, 254, 254)",
+                                ButtonTextColor: "black",
+                                ButtonButtonBackground: "yellow"
                             }}
                         />
                     </>
