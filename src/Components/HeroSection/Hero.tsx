@@ -27,7 +27,7 @@ export const Hero = ({RoundedLogo=false, HasDarkCover=true, Style, Title, Descri
             >
             <div 
                 style={{
-                    ...(HasDarkCover ? {background: "rgba(0, 0, 0, 0.535)"} : undefined),
+                    ...(HasDarkCover ? {background: "rgba(0, 0, 0, 0.535)", height: "100vh"} : undefined),
                 }}
                 className={style.content}>
                 <div className={`${style.logo_container} ${style.content_box}`}>
