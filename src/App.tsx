@@ -465,12 +465,21 @@ const App = () => {
 
     },[enteredUserInput]);
 
-    const [navBarBG, setNavBarBG ] = useState<string>("rgb(0, 0, 0)");
+    // Navbar changing color
+    const [navBarBG, setNavBarBG] = useState<string>("rgb(0, 0, 0)");
     useOnScrollAt(
-        "hero-section-sample",
-        () => setNavBarBG("rgba(0, 0, 0, 0"), // Visible
-        () => setNavBarBG("rgb(36, 36, 36)") // Not visible
-    )
+    "hero-section-sample",
+    () => {
+        // Only changes on desktop screens
+        if (window.innerWidth >= 1024) {
+            setNavBarBG("rgba(0, 0, 0, 0)");
+        } else {
+            setNavBarBG("rgb(36, 36, 36)"); // This ensures that the background is consistent
+        }
+    },
+    () => setNavBarBG("rgb(36, 36, 36)")
+    );
+
 
     return (
         <>
