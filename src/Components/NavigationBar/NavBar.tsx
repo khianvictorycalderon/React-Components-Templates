@@ -14,9 +14,10 @@ interface NavBarProps {
         ImagePath: string;
         Href?: string;
     };
+    Type?: "solid" | "transparent";
 }
 
-export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
+export const NavBar = ({ Buttons, Style, Logo, Type="solid" }: NavBarProps) => {
     
     // Check if it is mobile for mobile responsiveness of the hamburger icon
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -40,9 +41,10 @@ export const NavBar = ({ Buttons, Style, Logo }: NavBarProps) => {
         <>
             <div onClick={() => setIsMobileMenuShown(true)} id={style.hamburger}/>
             {(!isMobile || isMobileMenuShown) && (
-                <nav className={style.navbar} style={
-                    Style?.NavBarBackground ? {background: Style.NavBarBackground} : undefined
-                }>
+                <nav className={style.navbar} style={{
+                    ...(Style?.NavBarBackground ? {background: Style.NavBarBackground} : undefined),
+                    ...(Type == "transparent" ? {position: "fixed"} : {position: "sticky"})
+                }}>
                     {Logo && Logo?.Href ? (
                         <a href={Logo.Href}>
                             <img className={style.logo} src={Logo.ImagePath} />

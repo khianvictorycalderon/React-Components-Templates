@@ -527,6 +527,7 @@ const App = () => {
                 Buttons={ButtonList} 
                 Style={ButtonStyles}
                 Logo={Logo}
+                Type="transparent"
             />
 
             {/* Hero Section Usage */}
