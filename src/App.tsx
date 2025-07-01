@@ -13,15 +13,10 @@ import { FormInput } from "./Components/FormInput/FormInput";
 import { useEffect, useState } from "react";
 import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
 import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
+import { useOnScrollAt } from "./Utilities/DetectScroll";
 
 const App = () => {
 
-    // Navigation Bar Data
-    const ButtonStyles = {
-        // Optional Fields for customization
-        // ButtonTextColor:"#FFFFFF",
-        // NavBarBackground: "green"
-    }
     const Logo = {
         ImagePath: "image/Khian_Icon_Logo.png",
         Href: "https://khian.netlify.app/"
@@ -467,7 +462,15 @@ const App = () => {
     useEffect(() => {
         console.log(`User: ${enteredUserInput}`);
         console.log(`Bot: ${botLatestResponse}`);
+
     },[enteredUserInput]);
+
+    const [navBarBG, setNavBarBG ] = useState<string>("rgb(0, 0, 0)");
+    useOnScrollAt(
+        "hero-section-sample",
+        () => setNavBarBG("rgba(0, 0, 0, 0"), // Visible
+        () => setNavBarBG("rgb(36, 36, 36)") // Not visible
+    )
 
     return (
         <>
@@ -525,27 +528,31 @@ const App = () => {
             {/* Navigation Bar Usage */}
             <NavBar 
                 Buttons={ButtonList} 
-                Style={ButtonStyles}
+                Style={{
+                    NavBarBackground: navBarBG
+                }}
                 Logo={Logo}
                 Type="transparent"
             />
 
             {/* Hero Section Usage */}
-            <Hero
-                Title="Sample Website"
-                Description="Sample Description"
-                ButtonLabel="CTA Button"
-                ButtonOnClick={() => alert("You clicked the CTA")}
-                Logo="image/Khian_Icon_Logo.png"
-                Style={{
-                    BackgroundImage:"image/space.jpg",
-                    ButtonBackground: "rgb(25, 60, 216)",
-                    ButtonTextColor: "rgb(255, 255, 255)",
-                    FixedBackgroundPosition: true
-                }}
-                // RoundedLogo={true} // Optional for rounded logo, by default it is false
-                // HasDarkCover={false} // Optional for Background if it is solid color
-            />
+            <div id="hero-section-sample">
+                <Hero
+                    Title="Sample Website"
+                    Description="Sample Description"
+                    ButtonLabel="CTA Button"
+                    ButtonOnClick={() => alert("You clicked the CTA")}
+                    Logo="image/Khian_Icon_Logo.png"
+                    Style={{
+                        BackgroundImage:"image/space.jpg",
+                        ButtonBackground: "rgb(25, 60, 216)",
+                        ButtonTextColor: "rgb(255, 255, 255)",
+                        FixedBackgroundPosition: true
+                    }}
+                    // RoundedLogo={true} // Optional for rounded logo, by default it is false
+                    // HasDarkCover={false} // Optional for Background if it is solid color
+                />
+            </div>
 
             {/* Twin List Usage */}
             <TwinList
