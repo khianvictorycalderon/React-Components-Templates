@@ -12,6 +12,7 @@ interface HeroProps {
         BackgroundImage?: string;
         ButtonBackground?: string;
         ButtonTextColor?: string;
+        RoundedButton?: boolean;
         FixedBackgroundPosition: boolean;
     }
 }
@@ -48,6 +49,7 @@ export const Hero = ({RoundedLogo=false, HasDarkCover=true, Style, Title, Descri
                         style={{
                             ...(Style?.ButtonBackground ? {background: Style.ButtonBackground} : undefined),
                             ...(Style?.ButtonTextColor ? {color: Style.ButtonTextColor} : undefined),
+                            ...(Style?.RoundedButton ? {borderRadius: "32px"} : undefined),
                         }}
                         >
                         {ButtonLabel}
