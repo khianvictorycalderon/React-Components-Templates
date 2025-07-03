@@ -40,7 +40,7 @@ export default function Carousel({
     };
 
     return (
-        <div className={`${style.carousel} ${ReversedOrder ? style.reversed_order : ""}`} style={{ background: Background}}>
+        <div className={`${style.carousel} ${ReversedOrder ? style.reversed_order : ""}`} style={{ background: Background }}>
             <div className={style.carousel_banner}>
                 <h3 style={{ color: TextColor }}>{Images[currentIndex].Title}</h3>
                 <hr style={{ borderColor: HRColor }} />
@@ -48,12 +48,17 @@ export default function Carousel({
             </div>
             <div className={style.carousel_image_container}>
                 <button onClick={prevImage} className={`${style.carousel_button} ${style.prev}`}>❮</button>
-                <div
-                    className={style.carousel_image}
-                    role="img"
-                    aria-label={Images[currentIndex].Alt}
-                    style={{ backgroundImage: `url(${Images[currentIndex].ImgPath})` }}
-                />
+                <div className={style.carousel_slider} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    {Images.map((image, index) => (
+                        <div
+                            key={index}
+                            className={style.carousel_image}
+                            role="img"
+                            aria-label={image.Alt}
+                            style={{ backgroundImage: `url(${image.ImgPath})` }}
+                        />
+                    ))}
+                </div>
                 <button onClick={nextImage} className={`${style.carousel_button} ${style.next}`}>❯</button>
                 <div className={style.dots}>
                     {Images.map((_, index) => (
@@ -85,16 +90,21 @@ export function CarouselFull({ Images }: { Images: CarouselProps["Images"] }) {
     return (
         <div className={style.carousel_full}>
             <button onClick={prevImage} className={`${style.carousel_button} ${style.prev}`}>❮</button>
-            <div
-                className={style.carousel_full_image}
-                role="img"
-                aria-label={Images[currentIndex].Alt}
-                style={{ backgroundImage: `url(${Images[currentIndex].ImgPath})` }}
-            >
-                <div className={style.carousel_full_banner}>
-                    <h3>{Images[currentIndex].Title}</h3>
-                    <div>{Images[currentIndex].Description}</div>
-                </div>
+            <div className={style.carousel_slider_full} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                {Images.map((image, index) => (
+                    <div
+                        key={index}
+                        className={style.carousel_full_image}
+                        role="img"
+                        aria-label={image.Alt}
+                        style={{ backgroundImage: `url(${image.ImgPath})` }}
+                    >
+                        <div className={style.carousel_full_banner}>
+                            <h3>{image.Title}</h3>
+                            <div>{image.Description}</div>
+                        </div>
+                    </div>
+                ))}
             </div>
             <button onClick={nextImage} className={`${style.carousel_button} ${style.next}`}>❯</button>
             <div className={style.dots}>

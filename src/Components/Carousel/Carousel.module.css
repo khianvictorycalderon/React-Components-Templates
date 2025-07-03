@@ -17,13 +17,17 @@
 
 .carousel_image_container {
     position: relative;
+    overflow: hidden;
+}
+
+.carousel_slider {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: transform 0.5s ease;
+    width: 100%;
 }
 
 .carousel_image {
-    width: 100%;
+    min-width: 100%;
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -81,8 +85,15 @@
     overflow: hidden;
 }
 
-.carousel_full_image {
+.carousel_slider_full {
+    display: flex;
+    transition: transform 0.5s ease;
     width: 100%;
+    height: 100%;
+}
+
+.carousel_full_image {
+    min-width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
