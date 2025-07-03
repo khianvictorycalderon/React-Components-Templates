@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
 import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
 import { useOnScrollAt } from "./Utilities/DetectScroll";
+import Carousel, { CarouselFull } from "./Components/Carousel/Carousel";
 
 const App = () => {
 
@@ -563,6 +564,70 @@ const App = () => {
                     // HasDarkCover={false} // Optional for Background if it is solid color
                 />
             </div>
+
+            {/* Carousel Usage */}
+            <Carousel
+                Images={[
+                    {
+                        Title: "Generals",
+                        Description: "This is a sample description for generals",
+                        ImgPath: "image/generals.jpg",
+                        Alt: "Generals Image"
+                    },
+                    {
+                        Title: "Yuri's Revenge",
+                        Description: "This is a sample description for yuri's revenge",
+                        ImgPath: "image/yuri.jpg",
+                        Alt: "Yuri's Image"
+                    },
+                    {
+                        Title: "Minecraft",
+                        Description: "This is a sample description for minecraft",
+                        ImgPath: "image/minecraft.jpg",
+                        Alt: "Minecraft's Image"
+                    },
+                    {
+                        Title: "GTA San Andreas",
+                        Description: "This is a sample description for GTA San Andreas",
+                        ImgPath: "image/gta_sa.jpg",
+                        Alt: "GTA SA's Image"
+                    },
+                ]}
+                Style={{
+                    HRColor: "red",
+                    TextColor: "black",
+                    Background: "white"
+                }}
+            />
+
+            <CarouselFull
+                Images={[
+                    {
+                        Title: "Generals",
+                        Description: "This is a sample description for generals",
+                        ImgPath: "image/generals.jpg",
+                        Alt: "Generals Image"
+                    },
+                    {
+                        Title: "Yuri's Revenge",
+                        Description: "This is a sample description for yuri's revenge",
+                        ImgPath: "image/yuri.jpg",
+                        Alt: "Yuri's Image"
+                    },
+                    {
+                        Title: "Minecraft",
+                        Description: "This is a sample description for minecraft",
+                        ImgPath: "image/minecraft.jpg",
+                        Alt: "Minecraft's Image"
+                    },
+                    {
+                        Title: "GTA San Andreas",
+                        Description: "This is a sample description for GTA San Andreas",
+                        ImgPath: "image/gta_sa.jpg",
+                        Alt: "GTA SA's Image"
+                    },
+                ]}
+            />
 
             {/* Twin List Usage */}
             <TwinList
