@@ -594,9 +594,9 @@ const App = () => {
                     },
                 ]}
                 Style={{
-                    HRColor: "red",
-                    TextColor: "black",
-                    Background: "white"
+                    HRColor: "rgb(255, 255, 255)",
+                    TextColor: "rgb(255, 255, 255)",
+                    Background: "rgb(57, 57, 57)"
                 }}
             />
 
