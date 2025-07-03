@@ -600,6 +600,41 @@ const App = () => {
                 }}
             />
 
+            <Carousel
+                Images={[
+                    {
+                        Title: "Generals",
+                        Description: "This is a sample description for generals",
+                        ImgPath: "image/generals.jpg",
+                        Alt: "Generals Image"
+                    },
+                    {
+                        Title: "Yuri's Revenge",
+                        Description: "This is a sample description for yuri's revenge",
+                        ImgPath: "image/yuri.jpg",
+                        Alt: "Yuri's Image"
+                    },
+                    {
+                        Title: "Minecraft",
+                        Description: "This is a sample description for minecraft",
+                        ImgPath: "image/minecraft.jpg",
+                        Alt: "Minecraft's Image"
+                    },
+                    {
+                        Title: "GTA San Andreas",
+                        Description: "This is a sample description for GTA San Andreas",
+                        ImgPath: "image/gta_sa.jpg",
+                        Alt: "GTA SA's Image"
+                    },
+                ]}
+                Style={{
+                    HRColor: "rgb(255, 255, 255)",
+                    TextColor: "rgb(255, 255, 255)",
+                    Background: "rgb(57, 57, 57)"
+                }}
+                ReversedOrder
+            />
+
             <CarouselFull
                 Images={[
                     {
