@@ -24,6 +24,9 @@
 }
 
 @media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
     .title {
         margin-left: 5vw;
     }
