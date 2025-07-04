@@ -8,6 +8,7 @@ interface TwinListProps {
         ButtonBackground?: string;
         ButtonTextColor?: string;
         ReverseOrder?: boolean;
+        HasShadow?: boolean;
     }
     List: {
         Title: string;
@@ -30,7 +31,8 @@ export const TwinList = ({
         ButtonBackground,
         ButtonTextColor,
         TextColor,
-        ReverseOrder = false
+        ReverseOrder = false,
+        HasShadow = true
     } = {},
     Layout: {
         FullSize = false,
@@ -47,6 +49,7 @@ export const TwinList = ({
                     className={`
                         ${FullSize ? style.single_list_full_size : style.single_list}
                         ${(index % 2 === 0) !== ReverseOrder ? style.reverse_order : ''}
+                        ${HasShadow && style.box_shadow}
                     `}
                     style={{
                         ...(ListBackground ? { background: ListBackground } : undefined),

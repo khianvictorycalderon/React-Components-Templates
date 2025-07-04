@@ -204,7 +204,8 @@ const App = () => {
         TextColor: "rgb(46, 46, 46)",
         ButtonBackground: "rgb(104, 30, 160)",
         ButtonTextColor: "rgb(255, 248, 248)",
-        ReverseOrder: false // false by default
+        ReverseOrder: false, // false by default
+        HasShadow: true // true by default
     }
 
     // ------------------------------------------------
