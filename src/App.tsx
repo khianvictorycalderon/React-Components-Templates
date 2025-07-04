@@ -810,8 +810,12 @@ const App = () => {
 
             {/* PhotoGrid Usage */}
             <PhotoGrid
+                Title="Photo Grid"
                 Background="rgb(33, 33, 33)"
                 Images={PhotoGridImages}
+                Style={{
+                    TextColor: "white"
+                }}
             />
 
             {/* TextGrid Usage */}

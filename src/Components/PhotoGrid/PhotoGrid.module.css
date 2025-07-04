@@ -1,6 +1,11 @@
-/* Photo Grid */
+.title_header {
+    font-size: 24pt;
+    display: inline-block;
+    margin: 2rem;
+}
+
 .photo_grid {
-    padding: 2rem;
+    padding: 0rem 2rem 2rem 2rem;
     display: -webkit-flex; /* Safari */
     display: -moz-flex; /* Firefox */
     display: -ms-flexbox; /* IE 10+ */
