@@ -16,6 +16,7 @@ import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
 import { useOnScrollAt } from "./Utilities/DetectScroll";
 import Carousel, { CarouselFull } from "./Components/Carousel/Carousel";
 import Collapsible from "./Components/Collapsible/Collapsible";
+import FlexText from "./Components/FlexText/FlexText";
 
 const App = () => {
 
@@ -824,16 +825,6 @@ const App = () => {
                 }}
             />
 
-            {/* TextSection Usage */}
-            <TextSection
-                Title="Sample Title"
-                Content={<p>Hello World</p>}
-                Style={{
-                    Background: "rgb(34, 34, 34)",
-                    TextColor: "rgb(249, 249, 249)"
-                }}
-            />
-
             {/* ImageTextPair Usage */}
             <ImageTextPair
                 Rows={2}
@@ -928,6 +919,33 @@ const App = () => {
                         )
                     },
                 ]}
+            />
+
+            {/* TextSection Usage */}
+            <TextSection
+                Title="Sample Title"
+                Content={<p>Hello World</p>}
+                Style={{
+                    Background: "rgb(34, 34, 34)",
+                    TextColor: "rgb(249, 249, 249)"
+                }}
+            />
+
+            {/* FlexText Usage */}
+            <FlexText 
+                Title="Sample Title"
+                TextData={
+                    [
+                        [<>Row 1<br/> Column 1</>, "Row 1 Column 2"],
+                        ["Row 2 Column 1", "Row 2 Column 2", "Row 2 Column 3"],
+                        ["Row 3 Column 1"],
+                        ["Row 4 Column 1", "Row 4 Column 2"],
+                    ]
+                }
+                Style={{
+                    TextColor: "black",
+                    Background: "white"
+                }}
             />
 
             {/* Banner Usage (Multiple Banner for Multiple Images) */}
