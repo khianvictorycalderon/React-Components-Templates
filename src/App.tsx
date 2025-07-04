@@ -15,6 +15,7 @@ import { PortableChatBot } from "./Components/PortableChatBot/PortableChatBot";
 import { ImageTextPair } from "./Components/ImageTextPair/ImageTextPair";
 import { useOnScrollAt } from "./Utilities/DetectScroll";
 import Carousel, { CarouselFull } from "./Components/Carousel/Carousel";
+import Collapsible from "./Components/Collapsible/Collapsible";
 
 const App = () => {
 
@@ -565,6 +566,18 @@ const App = () => {
                 />
             </div>
 
+            {/* Collapsible */}
+            <Collapsible 
+                Title="Sample collapsible"
+                Style={{
+                    TextColor: "rgb(212, 212, 212)",
+                    HRColor: "rgb(212, 212, 212)",
+                    BackgroundColor: "rgb(31, 31, 31)"
+                }}
+                >
+                This is a hidden content
+            </Collapsible>
+
             {/* Carousel Usage */}
             <Carousel
                 Images={[
@@ -596,7 +609,7 @@ const App = () => {
                 Style={{
                     HRColor: "rgb(255, 255, 255)",
                     TextColor: "rgb(255, 255, 255)",
-                    Background: "rgb(57, 57, 57)"
+                    Background: "rgb(45, 45, 45)"
                 }}
             />
 
@@ -630,7 +643,7 @@ const App = () => {
                 Style={{
                     HRColor: "rgb(255, 255, 255)",
                     TextColor: "rgb(255, 255, 255)",
-                    Background: "rgb(57, 57, 57)"
+                    Background: "rgb(40, 40, 40)"
                 }}
                 ReversedOrder
             />

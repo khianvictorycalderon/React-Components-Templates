@@ -1,0 +1,14 @@
+.collapsible_box {
+    padding: 4rem;
+}
+
+.title_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle_button {
+    border: none;
+    background: none;
+    font-size: 24pt;
+}
