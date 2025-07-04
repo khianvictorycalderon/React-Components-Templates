@@ -816,6 +816,7 @@ const App = () => {
 
             {/* TextGrid Usage */}
             <TextGrid
+                Title="Text Grid"
                 Text={TextGridData}
                 Style={{
                     Background: "rgb(45, 45, 45)",

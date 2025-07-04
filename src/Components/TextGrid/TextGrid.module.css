@@ -1,4 +1,9 @@
-/* Text Grid */
+.header_title {
+    font-size: 24pt;
+    display: inline-block;
+    margin: 2rem;
+}
+
 .text_grid {
     display: -webkit-flex; /* Safari */
     display: -moz-flex; /* Firefox */
@@ -6,7 +11,7 @@
     display: flex; /* Standard */
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 0rem 4rem 2rem 4rem;
     justify-items: center;
     justify-content: center;
     align-items: center;
@@ -37,7 +42,7 @@
 @media (max-width: 768px) {
     .text_grid {
         flex-direction: column;
-        padding: 2rem;
+        padding: 0rem 2rem 2rem 2rem;
         gap: 1rem;
     }
     .label {
