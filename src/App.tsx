@@ -570,7 +570,7 @@ const App = () => {
 
             {/* Collapsible */}
             <Collapsible 
-                Title="Sample collapsible"
+                Title="Collapsible"
                 Style={{
                     TextColor: "rgb(212, 212, 212)",
                     BackgroundColor: "rgb(31, 31, 31)",
@@ -924,7 +924,7 @@ const App = () => {
 
             {/* TextSection Usage */}
             <TextSection
-                Title="Sample Title"
+                Title="Text Section"
                 Content={<p>Hello World</p>}
                 Style={{
                     Background: "rgb(34, 34, 34)",
@@ -934,7 +934,7 @@ const App = () => {
 
             {/* FlexText Usage */}
             <FlexText 
-                Title="Sample Title"
+                Title="Flex Text"
                 TextData={
                     [
                         [<>Row 1<br/> Column 1</>, "Row 1 Column 2"],
@@ -951,7 +951,7 @@ const App = () => {
 
             {/* Banner Usage (Multiple Banner for Multiple Images) */}
             <Banner
-                Title="Sample Title"
+                Title="Banner 1"
                 Description={
                     <>
                         <p>This is a Description</p>
@@ -961,7 +961,7 @@ const App = () => {
                 BackgroundImage="image/space.jpg"
             />
             <Banner
-                Title="Sample Title"
+                Title="Banner 2"
                 Description={
                     <>
                         <p>This is a Description</p>
