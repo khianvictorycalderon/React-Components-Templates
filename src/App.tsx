@@ -573,7 +573,8 @@ const App = () => {
                 Style={{
                     TextColor: "rgb(212, 212, 212)",
                     BackgroundColor: "rgb(31, 31, 31)",
-                    Rounded: true
+                    Rounded: true,
+                    FontTitleSize: "16pt"
                 }}
                 >
                 This is a hidden content<br/>

@@ -8,6 +8,7 @@ interface CollapsibleProps {
         TextColor?: string;
         BackgroundColor?: string;
         Rounded?: boolean;
+        FontTitleSize?: string;
     }
 }
 
@@ -17,9 +18,9 @@ export default function Collapsible({ children, Title, Style }: CollapsibleProps
     
     return (
         <div className={`${style.collapsible_box} ${Style?.Rounded && style.rounded}`} style={{backgroundColor: Style?.BackgroundColor || "rgb(236, 236, 236)"}}>
-            <div className={style.title_box}>
-                <h1 style={{color: Style?.TextColor || "black"}}>{Title}</h1>
-                <button className={style.toggle_button} style={{color: Style?.TextColor || "black", cursor: "pointer"}} onClick={() => setIsContentShown(!isContentShown)}>{isContentShown ? "▲" : "▼"}</button>
+            <div className={style.title_box} onClick={() => setIsContentShown(!isContentShown)} style={{cursor: "pointer"}}>
+                <span style={{color: Style?.TextColor || "black", fontSize: Style?.FontTitleSize || "18pt"}}>{Title}</span>
+                <button className={style.toggle_button} style={{color: Style?.TextColor || "black", fontSize: Style?.FontTitleSize || "18pt"}}>{isContentShown ? "▲" : "▼"}</button>
             </div>
             <div style={{color: Style?.TextColor || "black"}}>
                 {isContentShown && (
