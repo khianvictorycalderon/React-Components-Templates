@@ -1,5 +1,10 @@
+.rounded {
+    border-radius: 32px;
+}
+
 .collapsible_box {
-    padding: 4rem;
+    padding: 1rem;
+    margin: 0;
 }
 
 .title_box {

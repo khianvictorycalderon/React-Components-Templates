@@ -572,11 +572,18 @@ const App = () => {
                 Title="Sample collapsible"
                 Style={{
                     TextColor: "rgb(212, 212, 212)",
-                    HRColor: "rgb(212, 212, 212)",
-                    BackgroundColor: "rgb(31, 31, 31)"
+                    BackgroundColor: "rgb(31, 31, 31)",
+                    Rounded: true
                 }}
                 >
-                This is a hidden content
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
+                This is a hidden content<br/>
             </Collapsible>
 
             {/* Carousel Usage */}
