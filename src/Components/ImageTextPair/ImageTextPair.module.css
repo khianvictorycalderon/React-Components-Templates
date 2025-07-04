@@ -1,3 +1,9 @@
+.title_header {
+    padding: 2rem;
+    font-size: 24pt;
+    display: inline-block;
+}
+
 .content {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -827,6 +827,7 @@ const App = () => {
 
             {/* ImageTextPair Usage */}
             <ImageTextPair
+                Title="Image Text Pair"
                 Rows={2}
                 Style={{
                     BackgroundColor: "rgb(85, 85, 85)",
