@@ -27,7 +27,7 @@ export const ImageTextPair: React.FC<ImageTextPairProps> = ({Title, List, Rows, 
                 ...(Style?.TextColor ? {color: Style.TextColor} : undefined),
             }}  
             >
-            <span className={style.title_header}>{Title}</span>
+            <span className={style.title_header}><b>{Title}</b></span>
             <div className={style.content}>
                 {List?.map((item, index) => (
                     <div 
