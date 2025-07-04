@@ -6,6 +6,7 @@ interface TextSectionProps {
     Style?: {
         Background?: string;
         TextColor?: string;
+        HRColor?: string;
     }
 }
 
@@ -19,7 +20,7 @@ export const TextSection = ({Title, Content, Style}: TextSectionProps) => {
             }}
             >
             <h1>{Title}</h1>
-            <hr className={style.hr}/>
+            <hr style={{color: Style?.HRColor || "black"}}/>
             {Content}
         </div>
     )
