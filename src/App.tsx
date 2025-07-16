@@ -979,6 +979,7 @@ const App = () => {
 
             {/* Video Background */}
             <VideoBackground 
+                BGColor="black"
                 VideoPath="https://c10.patreonusercontent.com/4/patreon-media/p/post/118056467/f5d8df73313641518cfc48a58975301b/eyJhIjoxLCJwIjoxfQ%3D%3D/1.mp4?token-hash=-KbTkakEk3ehFCYCT0dxdaZT9ONm8JX1TmUy-YutGyI%3D&token-time=1752796800"
                 OverlayVisibility={0.7} // 0.5 by default, 0 for no overlay, 1 for full dark overlay
                 >

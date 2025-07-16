@@ -25,6 +25,16 @@
   -webkit-transform: translateZ(0);
 }
 
+.videoFallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* same as video to stay behind content */
+}
+
 .overlay {
   position: fixed;
   top: 0;
